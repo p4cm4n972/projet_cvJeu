@@ -22,15 +22,17 @@ body {
 }
 .masque {
    overflow: hidden;
-    width: 90px;
-    height: 120px;
-    left: 0;
-    top:300px;
+    width: 10px;
+    height: 10px;
+    border: solid black 1px;
+    
 }
 
 
 .sprite {
     left: -10px;
     top: -10px;
+    border: solid black 1px;
+    
     
 }
