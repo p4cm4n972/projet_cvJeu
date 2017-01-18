@@ -8,6 +8,7 @@ window.onload = function () {
 
             //instructions HAUT (jump)
             case 38:
+            i=0;
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                 document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
@@ -26,6 +27,7 @@ window.onload = function () {
 
             //instructions DROITE
             case 39:
+            i=0;
                 x -= 64
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(1)';
@@ -47,6 +49,7 @@ window.onload = function () {
 
             //*instructions* GAUCHE
             case 37:
+            i = 0;
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(-1)';
                 document.getElementsByClassName('sprite').contenu.trans = x + 'px';
@@ -56,7 +59,7 @@ window.onload = function () {
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
                 x -= 64;
                 u -= 2;
-                if (x < -448) {
+                if (x < - 576) {
                     x = -64;
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                     document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -67,18 +70,25 @@ window.onload = function () {
 
             //instructions BAS >> il tire
             case 40:
-            y = -129;
+            if( document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
+            document.getElementsByClassName('sprite').contenu.style.top = '192px';
+                
+                var tableauDanse = [-576,-512,-448,-384];
+            } else {
                var tableauDanse = [0,-64,-128,-192];
+            }
+            y = -129;
             document.getElementsByClassName('sprite').contenu.style.left = tableauDanse[i] + 'px';
             document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
             document.getElementsByClassName('masque').container.style.left = u + 'px';
             document.getElementsByClassName('masque').container.style.top = v + 'px';
             i++;
-            if(i == 3){i=0};
+            if(i == 4){i=0};
             break;
         };
 
     };
+
     var x = 0;
     var y = 0;
     var u = 0;
