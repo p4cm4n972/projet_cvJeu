@@ -1,0 +1,36 @@
+body {
+    background-image: url('img/fond01.jpg');
+    background-size: cover;
+    width: 100%;
+    height: 100%;
+}
+.fondAnime {
+    background-image: url('img/fond01.jpg');
+    background-size: contain;
+    width: 80%;
+    height: 70%;
+    border: solid 2px black;
+    position: absolute;
+    z-index: -1;
+
+}
+#container {
+    position: absolute;
+}
+#contenu {
+    position: absolute;
+}
+.masque {
+   overflow: hidden;
+    width: 90px;
+    height: 120px;
+    left: 0;
+    top:300px;
+}
+
+
+.sprite {
+    left: -10px;
+    top: -10px;
+    
+}
