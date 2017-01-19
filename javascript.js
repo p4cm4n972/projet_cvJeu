@@ -1,78 +1,78 @@
 window.onload = function () {
 
 
-var saut2 = function () {
+    var saut2 = function () {
 
 
-            var monter2 = setInterval(function () {
-                document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                document.getElementsByClassName('masque').container.style.left = u + 'px';
-                document.getElementsByClassName('masque').container.style.top = v + 'px';
-                x -= 64;
-                v -= 10;
-                if (document.getElementsByClassName('masque').container.style.top == 255 + "px") {
-                    clearInterval(monter2);
-                    x = -176;
-                    var descente2 = setInterval(function () {
+        var monter2 = setInterval(function () {
+            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+            document.getElementsByClassName('masque').container.style.left = u + 'px';
+            document.getElementsByClassName('masque').container.style.top = v + 'px';
+            x += 64;
+            v -= 10;
+            if (document.getElementsByClassName('masque').container.style.top == 265 + "px") {
+                clearInterval(monter2);
+              //  y = -520;
+                var descente2 = setInterval(function () {
+                    document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                    document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                    document.getElementsByClassName('masque').container.style.left = u + 'px';
+                    document.getElementsByClassName('masque').container.style.top = v + 'px';
+                    x -= 64;
+                    v += 10;
+                    if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
+                        clearInterval(descente2);
+                        y = -64;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                         document.getElementsByClassName('masque').container.style.left = u + 'px';
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        x -= 64;
-                        v += 10;
-                        if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
-                            clearInterval(descente2);
-                            y = -64;
-                            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                            document.getElementsByClassName('masque').container.style.left = u + 'px';
-                            document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        }
+                    }
 
-                    }, 1000 / 30);
-                }
+                }, 1000/30);
+            }
 
 
-            }, 1000 / 30);
+        }, 1000/30);
 
-        };//SAUT 2
+    };//SAUT 2
 
-        var saut = function () {
+    var saut = function () {
 
 
-            var monter = setInterval(function () {
-                document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                document.getElementsByClassName('masque').container.style.left = u + 'px';
-                document.getElementsByClassName('masque').container.style.top = v + 'px';
-                x -= 64;
-                v -= 10;
-                if (document.getElementsByClassName('masque').container.style.top == 255 + "px") {
-                    clearInterval(monter);
-                    var descente = setInterval(function () {
+        var monter = setInterval(function () {
+            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+            document.getElementsByClassName('masque').container.style.left = u + 'px';
+            document.getElementsByClassName('masque').container.style.top = v + 'px';
+            x -= 64;
+            v -= 10;
+            if (document.getElementsByClassName('masque').container.style.top == 255 + "px") {
+                clearInterval(monter);
+                var descente = setInterval(function () {
+                    document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                    document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                    document.getElementsByClassName('masque').container.style.left = u + 'px';
+                    document.getElementsByClassName('masque').container.style.top = v + 'px';
+                    x += 64;
+                    v += 10;
+                    if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
+                        clearInterval(descente);
+                        y = -64;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                         document.getElementsByClassName('masque').container.style.left = u + 'px';
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        x += 64;
-                        v += 10;
-                        if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
-                            clearInterval(descente);
-                            y = -64;
-                            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                            document.getElementsByClassName('masque').container.style.left = u + 'px';
-                            document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        }
+                    }
 
-                    }, 1000 / 30);
-                }
+                }, 1000 / 30);
+            }
 
 
-            }, 1000 / 30);
+        }, 1000 / 30);
 
-        };//FIN FONCTION SAUT
+    };//FIN FONCTION SAUT
 
     window.onkeydown = function (event) {
         var code = event.keyCode;
@@ -85,18 +85,13 @@ var saut2 = function () {
                     i = 0;
                     y = -64;
                     if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
-                      //  document.getElementsByClassName('sprite').contenu.style.left = '-640px';
-                     // x = -576;
-                      saut2();
+                        x = -520;
+                        saut2();
                     } else {
                         x = 0;
-                    }
-                   
-                    var push = false;
-                    if (!push) {
                         saut();
-                        return push = true;
                     }
+
                 };
                 echauffement();
                 break;
