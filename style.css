@@ -1,48 +1,65 @@
-body {
+h1 {
+    padding-left: 50px;
+}
+#background01 {
     background-image: url('img/fond01.jpg');
+    background-attachment: fixed;
+    background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     width: 100%;
     height: 100%;
 }
-h1 {
-    padding-left: 50px;
+#background02 {
+   background-image: url('img/fond02.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100%;
 }
-.fondAnime {
+.fondAnime1 {
     background-image: url('img/fond01.jpg');
     background-size: contain;
-    width: 80%;
-    height: 70%;
+    width: 900px;
+    height: 450px;
+    margin: auto;
     border: solid 2px black;
-    position: absolute;
 }
-.fondAnime2 img{
-   /* background-image: url('img/fond.jpg');*/
+.fondAnime2 {
+    background-image: url('img/fond02.jpg');
     background-size: contain;
+    width: 900px;
+    height: 450px;
+    margin: auto;
     border: solid 2px black;
-    position: absolute;
-    top:300px;
-
 }
-#container {
+
+
+
+/*#container {
     position: absolute;
 }
 #contenu {
     position: absolute;
-}
+}*/
 .masque {
+   top: 0px;
+   left: 0px;
+    height: 64px;
+    width: 64px;
    overflow: hidden;
-    width: 10px;
-    height: 10px;
-  /* border: solid black 1px;*/
-    
+   position: absolute;
+   border: solid black 1px;
+
 }
 
 
 .sprite {
-    left: -10px;
-    top: -10px;
-  /* border: solid black 1px;*/
+    left: 0px;
+    top: 0px;
+   position: absolute;
     
     
 }

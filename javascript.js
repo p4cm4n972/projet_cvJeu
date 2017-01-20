@@ -5,13 +5,13 @@ window.onload = function () {
 
 
         var monter2 = setInterval(function () {
-            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+           document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+           document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
             document.getElementsByClassName('masque').container.style.left = u + 'px';
             document.getElementsByClassName('masque').container.style.top = v + 'px';
             x += 64;
             v -= 10;
-            if (document.getElementsByClassName('masque').container.style.top == 265 + "px") {
+            if (document.getElementsByClassName('masque').container.style.top == 420 + "px") {
                 clearInterval(monter2);
               //  y = -520;
                 var descente2 = setInterval(function () {
@@ -21,7 +21,7 @@ window.onload = function () {
                     document.getElementsByClassName('masque').container.style.top = v + 'px';
                     x -= 64;
                     v += 10;
-                    if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
+                    if (document.getElementsByClassName('masque').container.style.top == 420 + "px") {
                         clearInterval(descente2);
                         y = -64;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
@@ -30,11 +30,11 @@ window.onload = function () {
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
                     }
 
-                }, 1000/30);
+                }, 2000);
             }
 
 
-        }, 1000/30);
+        }, 2000);
 
     };//SAUT 2
 
@@ -48,7 +48,7 @@ window.onload = function () {
             document.getElementsByClassName('masque').container.style.top = v + 'px';
             x -= 64;
             v -= 10;
-            if (document.getElementsByClassName('masque').container.style.top == 255 + "px") {
+            if (document.getElementsByClassName('masque').container.style.top == 430 + "px") {
                 clearInterval(monter);
                 var descente = setInterval(function () {
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
@@ -57,20 +57,21 @@ window.onload = function () {
                     document.getElementsByClassName('masque').container.style.top = v + 'px';
                     x += 64;
                     v += 10;
-                    if (document.getElementsByClassName('masque').container.style.top == 305 + "px") {
+                    if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
                         clearInterval(descente);
                         y = -64;
+                        x = 0;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                         document.getElementsByClassName('masque').container.style.left = u + 'px';
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
                     }
 
-                }, 1000 / 30);
+                }, 1000);
             }
 
 
-        }, 1000 / 30);
+        }, 1000);
 
     };//FIN FONCTION SAUT
 
@@ -88,7 +89,7 @@ window.onload = function () {
                         x = -520;
                         saut2();
                     } else {
-                        x = 0;
+                        x = -128;
                         saut();
                     }
 
@@ -162,8 +163,8 @@ window.onload = function () {
 
     var x = 0;
     var y = 0;
-    var u = 0;
-    var v = 315;
+    var u = 30;
+    var v = 470;
     var i = 0;
 
     document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -172,9 +173,9 @@ window.onload = function () {
     document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
 
 
-    document.getElementsByClassName('masque').container.style.width = 64 + 'px';
+    /*document.getElementsByClassName('masque').container.style.width = 64 + 'px';
     document.getElementsByClassName('masque').container.style.height = 64 + 'px';
     document.getElementsByClassName('sprite').contenu.style.height = 192 + 'px';
-    document.getElementsByClassName('sprite').contenu.style.width = 640 + 'px';
+    document.getElementsByClassName('sprite').contenu.style.width = 640 + 'px';*/
 
 };
