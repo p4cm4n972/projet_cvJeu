@@ -5,15 +5,15 @@ window.onload = function () {
 
 
         var monter2 = setInterval(function () {
-           document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-           document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
             document.getElementsByClassName('masque').container.style.left = u + 'px';
             document.getElementsByClassName('masque').container.style.top = v + 'px';
             x += 64;
             v -= 10;
-            if (document.getElementsByClassName('masque').container.style.top == 420 + "px") {
+            if (document.getElementsByClassName('masque').container.style.top == 430 + "px") {
                 clearInterval(monter2);
-              //  y = -520;
+                //  y = -520;
                 var descente2 = setInterval(function () {
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                     document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
@@ -21,20 +21,21 @@ window.onload = function () {
                     document.getElementsByClassName('masque').container.style.top = v + 'px';
                     x -= 64;
                     v += 10;
-                    if (document.getElementsByClassName('masque').container.style.top == 420 + "px") {
+                    if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
                         clearInterval(descente2);
                         y = -64;
+                        x = 0;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                         document.getElementsByClassName('masque').container.style.left = u + 'px';
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
                     }
 
-                }, 2000);
+                }, 1000 / 30);
             }
 
 
-        }, 2000);
+        }, 1000 / 30);
 
     };//SAUT 2
 
@@ -67,11 +68,11 @@ window.onload = function () {
                         document.getElementsByClassName('masque').container.style.top = v + 'px';
                     }
 
-                }, 1000);
+                }, 1000 / 30);
             }
 
 
-        }, 1000);
+        }, 1000 / 30);
 
     };//FIN FONCTION SAUT
 
@@ -89,7 +90,7 @@ window.onload = function () {
                         x = -520;
                         saut2();
                     } else {
-                        x = -128;
+                        x = -64;
                         saut();
                     }
 
@@ -142,20 +143,37 @@ window.onload = function () {
 
             //instructions BAS >> il tire
             case 40:
-                if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
-                    document.getElementsByClassName('sprite').contenu.style.top = '192px';
+                var rafale = function () {
+                    var shoot = setInterval(function () {
 
-                    var tableauDanse = [-576, -512, -448, -384];
-                } else {
-                    var tableauDanse = [0, -64, -128, -192];
+                        document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                        document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                        document.getElementsByClassName('masque').container.style.left = u + 'px';
+                        document.getElementsByClassName('masque').container.style.top = v + 'px';
+                        x -= 64;
+                        if (x <= -256) {
+                            clearInterval(shoot);
+                            x = 0;
+                            y = -128;
+                            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                            document.getElementsByClassName('masque').container.style.left = u + 'px';
+                            document.getElementsByClassName('masque').container.style.top = v + 'px';
+                        }
+                    }, 3000);
                 }
-                y = -129;
-                document.getElementsByClassName('sprite').contenu.style.left = tableauDanse[i] + 'px';
-                document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                document.getElementsByClassName('masque').container.style.left = u + 'px';
-                document.getElementsByClassName('masque').container.style.top = v + 'px';
-                i++;
-                if (i == 4) { i = 0 };
+                var tire = function () {
+                    y = -128;
+
+                    if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
+                        x = -520;
+                        rafale();
+                    } else {
+                        x = -0;
+                        rafale();
+                    }
+                }
+                tire();
                 break;
         };
 
