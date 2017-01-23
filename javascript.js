@@ -12,7 +12,7 @@ window.onload = function () {
         divBullet01.width = 64;
         divBullet01.style.position = 'absolute';
         divBullet01.style.top = document.getElementsByClassName('masque').container.style.top;
-        divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px";
+        divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px"
         divBullet01.appendChild(bullet01);
         parent.appendChild(divBullet01);
     }
@@ -37,12 +37,13 @@ window.onload = function () {
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
 
                     bullet();
-                var bulletAnimation = requestAnimationFrame(animation);
-                function animation() {
-                    divBullet01.left += 64 + 'px';
-                    requestAnimationFrame(animation);
+                var bulletAnimation = setInterval(function () {
+                    var z = 0;
+                    z += 20;
+                    divBullet01.style.left = parseFloat(divBullet01.style.left) + z + 'px';
+
+                }, 4000/30);
                 }
-            }
         }, 1000 / 30);
     }
 
