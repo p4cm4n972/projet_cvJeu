@@ -88,10 +88,10 @@ window.onload = function () {
         }
     }
     //FONCTION POUR LANIMATION DU SAUT DIRECTION GAUCHE (SCALE -1)
-    var sautDroiteGauche = function () {
+    var sautGauche = function () {
 
 
-        var monter2 = setInterval(function () {
+        var monter = setInterval(function () {
             document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
             document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
             document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -99,8 +99,8 @@ window.onload = function () {
             x += 64;
             v -= 10;
             if (document.getElementsByClassName('masque').container.style.top == 430 + "px") {
-                clearInterval(monter2);
-                var descente2 = setInterval(function () {
+                clearInterval(monter);
+                var descente = setInterval(function () {
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                     document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                     document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -108,7 +108,7 @@ window.onload = function () {
                     x -= 64;
                     v += 10;
                     if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
-                        clearInterval(descente2);
+                        clearInterval(descente);
                         y = -64;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
@@ -164,7 +164,7 @@ window.onload = function () {
         y = -64;
         if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
             x = -520;
-            sautDroiteGauche();
+            sautGauche();
         } else {
             x = -64;
             sautDroite();
