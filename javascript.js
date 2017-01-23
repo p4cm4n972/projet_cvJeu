@@ -1,7 +1,80 @@
 window.onload = function () {
 
+        var divBullet01 = document.createElement('div');
+    //FONCTION POUR LANIMATION DU BULLET
+    var bullet = function () {
+        var parent = document.body.children[1].children[0];
+        var bullet01 = document.createElement('img');
+        bullet01.src = 'img/bullet01.png';
+        bullet01.width = 64;
+        bullet01.height = 64;
+        divBullet01.style.position = 'absolute';
+        divBullet01.style.top = document.getElementsByClassName('masque').container.style.top;
+        divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px";
+        divBullet01.appendChild(bullet01);
+        parent.appendChild(divBullet01);
+    }
 
-    var saut2 = function () {
+
+    //FONCTION POUR LANIMATION DE TIR DIRECTION DROITE (SCALE 1)
+    var tirDroite = function () {
+        var shoot = setInterval(function () {
+
+            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+            document.getElementsByClassName('masque').container.style.left = u + 'px';
+            document.getElementsByClassName('masque').container.style.top = v + 'px';
+            x -= 64;
+            if (x <= -256) {
+                clearInterval(shoot);
+                x = 0;
+                y = -128;
+                document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                document.getElementsByClassName('masque').container.style.left = u + 'px';
+                document.getElementsByClassName('masque').container.style.top = v + 'px';
+
+                var  bulletAnimation = setInterval(function () {
+                    bullet();
+                    divBullet01.style.left += 64;
+                }, 1000 / 30);
+            }
+        }, 1000 / 30);
+    }
+
+    //FONCTION POUR LANIMATION DE TIR DIRECTION GAUCHE (SCALE -1)
+    var tirGauche = function () {
+        var shoot = setInterval(function () {
+
+            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+            document.getElementsByClassName('masque').container.style.left = u + 'px';
+            document.getElementsByClassName('masque').container.style.top = v + 'px';
+            x += 64;
+            if (x >= -256) {
+                clearInterval(shoot);
+                y = -128;
+                x = -576;
+                document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
+                document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
+                document.getElementsByClassName('masque').container.style.left = u + 'px';
+                document.getElementsByClassName('masque').container.style.top = v + 'px';
+            }
+        }, 1000 / 30);
+    }
+    var initTire = function () {
+        y = -128;
+
+        if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
+            x = -576;
+            tirGauche();
+        } else {
+            x = 0;
+            tirDroite();
+        }
+    }
+    //FONCTION POUR LANIMATION DU SAUT DIRECTION GAUCHE (SCALE -1)
+    var sautDroiteGauche = function () {
 
 
         var monter2 = setInterval(function () {
@@ -13,7 +86,6 @@ window.onload = function () {
             v -= 10;
             if (document.getElementsByClassName('masque').container.style.top == 430 + "px") {
                 clearInterval(monter2);
-                //  y = -520;
                 var descente2 = setInterval(function () {
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                     document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
@@ -24,7 +96,6 @@ window.onload = function () {
                     if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
                         clearInterval(descente2);
                         y = -64;
-                        x = 0;
                         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                         document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -37,9 +108,9 @@ window.onload = function () {
 
         }, 1000 / 30);
 
-    };//SAUT 2
-
-    var saut = function () {
+    };
+    //FONCTION POUR LANIMATION DU SAUT DIRECTION DROITE (SCALE 1)
+    var sautDroite = function () {
 
 
         var monter = setInterval(function () {
@@ -74,7 +145,18 @@ window.onload = function () {
 
         }, 1000 / 30);
 
-    };//FIN FONCTION SAUT
+    };//FIN FONCTION sautDroite
+    var initSaut = function () {
+        y = -64;
+        if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
+            x = -520;
+            sautDroiteGauche();
+        } else {
+            x = -64;
+            sautDroite();
+        }
+
+    };
 
     window.onkeydown = function (event) {
         var code = event.keyCode;
@@ -83,24 +165,12 @@ window.onload = function () {
 
             //instructions HAUT (jump)
             case 38:
-                var echauffement = function () {
-                    i = 0;
-                    y = -64;
-                    if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
-                        x = -520;
-                        saut2();
-                    } else {
-                        x = -64;
-                        saut();
-                    }
 
-                };
-                echauffement();
+                initSaut();
                 break;
 
             //instructions DROITE
             case 39:
-                i = 0;
                 x -= 64
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(1)';
@@ -122,7 +192,6 @@ window.onload = function () {
 
             //*instructions* GAUCHE
             case 37:
-                i = 0;
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(-1)';
                 document.getElementsByClassName('sprite').contenu.trans = x + 'px';
@@ -132,7 +201,7 @@ window.onload = function () {
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
                 x -= 64;
                 u -= 2;
-                if (x < - 576) {
+                if (x < -576) {
                     x = -64;
                     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                     document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -143,37 +212,8 @@ window.onload = function () {
 
             //instructions BAS >> il tire
             case 40:
-                var rafale = function () {
-                    var shoot = setInterval(function () {
 
-                        document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                        document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                        document.getElementsByClassName('masque').container.style.left = u + 'px';
-                        document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        x -= 64;
-                        if (x <= -256) {
-                            clearInterval(shoot);
-                            x = 0;
-                            y = -128;
-                            document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
-                            document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
-                            document.getElementsByClassName('masque').container.style.left = u + 'px';
-                            document.getElementsByClassName('masque').container.style.top = v + 'px';
-                        }
-                    }, 3000);
-                }
-                var tire = function () {
-                    y = -128;
-
-                    if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
-                        x = -520;
-                        rafale();
-                    } else {
-                        x = -0;
-                        rafale();
-                    }
-                }
-                tire();
+                initTire();
                 break;
         };
 
@@ -181,9 +221,8 @@ window.onload = function () {
 
     var x = 0;
     var y = 0;
-    var u = 30;
+    var u = 325;
     var v = 470;
-    var i = 0;
 
     document.getElementsByClassName('masque').container.style.left = u + 'px';
     document.getElementsByClassName('masque').container.style.top = v + 'px';
@@ -191,9 +230,6 @@ window.onload = function () {
     document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
 
 
-    /*document.getElementsByClassName('masque').container.style.width = 64 + 'px';
-    document.getElementsByClassName('masque').container.style.height = 64 + 'px';
-    document.getElementsByClassName('sprite').contenu.style.height = 192 + 'px';
-    document.getElementsByClassName('sprite').contenu.style.width = 640 + 'px';*/
+
 
 };
