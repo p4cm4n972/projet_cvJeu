@@ -1,6 +1,6 @@
 window.onload = function () {
 
-        var divBullet01 = document.createElement('div');
+    var divBullet01 = document.createElement('div');
     //FONCTION POUR LANIMATION DU BULLET
     var bullet = function () {
         var parent = document.body.children[1].children[0];
@@ -8,6 +8,8 @@ window.onload = function () {
         bullet01.src = 'img/bullet01.png';
         bullet01.width = 64;
         bullet01.height = 64;
+        divBullet01.height = 64;
+        divBullet01.width = 64;
         divBullet01.style.position = 'absolute';
         divBullet01.style.top = document.getElementsByClassName('masque').container.style.top;
         divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px";
@@ -34,10 +36,12 @@ window.onload = function () {
                 document.getElementsByClassName('masque').container.style.left = u + 'px';
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
 
-                var  bulletAnimation = setInterval(function () {
                     bullet();
-                    divBullet01.style.left += 64;
-                }, 1000 / 30);
+                var bulletAnimation = requestAnimationFrame(animation);
+                function animation() {
+                    divBullet01.left += 64 + 'px';
+                    requestAnimationFrame(animation);
+                }
             }
         }, 1000 / 30);
     }
