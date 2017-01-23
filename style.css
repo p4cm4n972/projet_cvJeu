@@ -36,14 +36,6 @@ h1 {
     border: solid 2px black;
 }
 
-
-
-/*#container {
-    position: absolute;
-}
-#contenu {
-    position: absolute;
-}*/
 .masque {
    top: 0px;
    left: 0px;
@@ -51,15 +43,12 @@ h1 {
     width: 64px;
    overflow: hidden;
    position: absolute;
-   border: solid black 1px;
-
+  /* border: solid black 1px;*/
 }
-
 
 .sprite {
     left: 0px;
     top: 0px;
    position: absolute;
-    
-    
+       
 }

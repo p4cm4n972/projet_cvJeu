@@ -1,10 +1,13 @@
 window.onload = function () {
 
+
+    //DECLARATION VARIABLE GLOBALE
     var divBullet01 = document.createElement('div');
+    var bullet01 = document.createElement('img');
+
     //FONCTION POUR LANIMATION DU BULLET
     var bullet = function () {
         var parent = document.body.children[1].children[0];
-        var bullet01 = document.createElement('img');
         bullet01.src = 'img/bullet01.png';
         bullet01.width = 64;
         bullet01.height = 64;
@@ -22,6 +25,7 @@ window.onload = function () {
     var tirDroite = function () {
         var shoot = setInterval(function () {
 
+
             document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
             document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
             document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -36,14 +40,18 @@ window.onload = function () {
                 document.getElementsByClassName('masque').container.style.left = u + 'px';
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
 
-                    bullet();
+                bullet();
                 var bulletAnimation = setInterval(function () {
                     var z = 0;
                     z += 20;
                     divBullet01.style.left = parseFloat(divBullet01.style.left) + z + 'px';
+                    if (divBullet01.style.left >= 850 + "px") {
+                        clearInterval(bulletAnimation);
+                        bullet01.src = 'img/explosion01.png';
+                    }
 
-                }, 4000/30);
-                }
+                }, 4000 / 30);
+            }
         }, 1000 / 30);
     }
 
@@ -69,6 +77,7 @@ window.onload = function () {
     }
     var initTire = function () {
         y = -128;
+        $('#sound')[0].play();
 
         if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
             x = -576;
@@ -176,7 +185,7 @@ window.onload = function () {
 
             //instructions DROITE
             case 39:
-                x -= 64
+                x -= 64;
                 y = 0;
                 document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(1)';
 
