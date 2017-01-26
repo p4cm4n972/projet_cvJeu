@@ -1,32 +1,3 @@
-var bullet = function () {
-    var parent = document.body.children[1].children[0];
-    bullet01 = document.createElement('img');
-    bullet01.src = 'img/bullet01.png';
-    bullet01.width = 64;
-    bullet01.height = 64;
-    divBullet01 = document.createElement('div');
-    divBullet01.setAttribute('class', 'divBullet01');
-    divBullet01.height = 64;
-    divBullet01.width = 64;
-    divBullet01.style.position = 'absolute';
-    divBullet01.style.top = document.getElementsByClassName('masque').container.style.top;
-    divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px";
-    divBullet01.appendChild(bullet01);
-    parent.appendChild(divBullet01);
-
-    var bulletAnimation = setInterval(function () {
-        var z = 0;
-        z += 20;
-        divBullet01.style.left = parseFloat(divBullet01.style.left) + z + 'px';
-        if (divBullet01.style.left >= 850 + "px") {
-            clearInterval(bulletAnimation);
-            $('.divBullet01').remove();
-            explosion();
-
-        }
-
-    }, 4000 / 30);
-};
 var explosion = function () {
     var parent = document.body.children[1].children[0];
     divExplosion01 = document.createElement('div');
@@ -57,8 +28,40 @@ var explosion = function () {
         x -= 64;
         if( x < -512) {
             clearInterval(animationExplosion);
+            $('.masqueExplosion').remove();
+            
             key = true;
         }
 
     }, 3000 / 30);
+};
+var bullet = function () {
+    var parent = document.body.children[1].children[0];
+    bullet01 = document.createElement('img');
+    bullet01.src = 'img/bullet01.png';
+    bullet01.width = 64;
+    bullet01.height = 64;
+    divBullet01 = document.createElement('div');
+    divBullet01.setAttribute('class', 'divBullet01');
+    divBullet01.height = 64;
+    divBullet01.width = 64;
+    divBullet01.style.position = 'absolute';
+    divBullet01.style.top = document.getElementsByClassName('masque').container.style.top;
+    divBullet01.style.left = parseFloat(document.getElementsByClassName('masque').container.style.left) + 64 + "px";
+    divBullet01.appendChild(bullet01);
+    parent.appendChild(divBullet01);
+
+        var q = 0;
+    var bulletAnimation = setInterval(function () {
+        q += 20;
+        divBullet01.style.left = parseFloat(divBullet01.style.left) + q + 'px';
+        if (divBullet01.style.left >= 850 + "px") {
+            clearInterval(bulletAnimation);
+            $('.divBullet01').remove();
+            explosion();
+            
+
+        }
+
+    }, 4000 / 30);
 };

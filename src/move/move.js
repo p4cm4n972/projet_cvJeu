@@ -15,8 +15,8 @@ var moveRight = function () {
         x -= 64;
         u += 2;
     }
-    if (document.getElementsByClassName('masque').container.style.left >=  300 + "px") {
-    skills01();
+    if (document.getElementsByClassName('masque').container.style.left ==  300 + "px" || document.getElementsByClassName('masque').container.style.left ==  400 + "px") {
+    skillAnimation();
 }
 };
 
