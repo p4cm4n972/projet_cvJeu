@@ -14,7 +14,10 @@ var moveRight = function () {
         document.getElementsByClassName('masque').container.style.left = u + 'px';
         x -= 64;
         u += 2;
-    };
+    }
+    if (document.getElementsByClassName('masque').container.style.left >=  300 + "px") {
+    skills01();
+}
 };
 
 var moveLeft = function () {
@@ -34,4 +37,5 @@ y = 0;
                     x -= 64;
                     u -= 2;
                 }
+
 };

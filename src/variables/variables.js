@@ -3,7 +3,7 @@ var bullet01;
 var explosion01;
 var x = 0;
 var y = 0;
-var u = 325;
+var u = 250;
 var v = 470;
 
 var key = true;
