@@ -104,11 +104,16 @@
         </div>
     </div>
     <!-- AUDIO -->
+    <audio preload="auto" id="mySound">
+        <source src="sound/mySoundMP.mp3" type="audio/mp3">
+        <source src="sound/mySound.ogg" type="audio/ogg">
+    </audio>
    <audio preload="auto" id="sound">
         <source src="sound/tir.mp3" type="audio/mp3">
-        <source src="#" type="#">
-    </audio> 
-
+    </audio>
+    <audio preload="auto" id="sound02"> 
+        <source src="sound/jump01.wav" type="audio/wav">
+    </audio>
     </div>
     </div>
     </div>
@@ -118,6 +123,11 @@
     <!-- Include all compiled plugins (below), or include individual files as needed -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Script personnel -->
+    <script src="src/variables/variables.js"></script>
+    <script src="src/move/move.js"></script>
+    <script src="src/saut/saut.js"></script>
+    <script src="src/tir/tir.js"></script>
+    <script src="src/bullet/bullet.js"></script>
     <script src="javascript.js"></script>
 
 </body>
