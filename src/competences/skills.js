@@ -25,17 +25,19 @@ var skills01 = function () {
     //ANIMATION SKILLS
     var x = 0;
     var z = parseFloat(document.getElementsByClassName('masqueSkills').containerSkills.style.left)
+    var y = parseFloat(document.getElementsByClassName('masqueSkills').containerSkills.style.top)
     var animationSkills01 = setInterval(function () {
         document.getElementsByClassName('spriteSkills').contenuSkills.style.left = x + "px";
         document.getElementsByClassName('masqueSkills').containerSkills.style.left = z + "px";
+        document.getElementsByClassName('masqueSkills').containerSkills.style.top = y + "px";
         x -= 64;
-        z -= 10;
+        z -= 20;
         if (x < -128) {
             x = 0;
         }
 
 //COLLISION
-        if( z <= u) {
+        if( z <= u && document.getElementsByClassName('masque').container.style.top == 470 + "px") {
             clearInterval(animationSkills01);
             $('.masqueSkills').remove();
             

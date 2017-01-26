@@ -48,7 +48,7 @@ var initTire = function () {
     key = false;
     y = -128;
 
-    $('#sound')[0].play();
+    document.getElementById('sound').play;
 
     if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
         x = -576;

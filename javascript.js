@@ -1,6 +1,6 @@
 window.onload = function () {
         'use strict';
-        //    $('#mySound')[0].play();
+      //  document.getElementById('mySound').play();
 
         window.onkeydown = function (event) {
                 var code = event.keyCode;
