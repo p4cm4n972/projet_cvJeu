@@ -22,7 +22,6 @@ var bullet = function () {
             clearInterval(bulletAnimation);
             $('.divBullet01').remove();
             explosion();
-            key = true;
 
         }
 
@@ -55,10 +54,11 @@ var explosion = function () {
     var x = 0;
     var animationExplosion = setInterval(function () {
         document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = x + "px";
-        x += 64;
-        if( x > -256) {
-            clearInterval(animationExplosion)
+        x -= 64;
+        if( x < -512) {
+            clearInterval(animationExplosion);
+            key = true;
         }
 
-    }, 1000 / 30);
+    }, 3000 / 30);
 };
