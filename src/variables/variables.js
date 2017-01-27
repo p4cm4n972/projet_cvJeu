@@ -16,4 +16,3 @@ document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
 document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
 
 
-var parent = document.body.children[1].children[0];
