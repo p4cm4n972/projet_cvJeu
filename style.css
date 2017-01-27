@@ -43,7 +43,7 @@ h1 {
     width: 64px;
    overflow: hidden;
    position: absolute;
-   border: solid black 1px;
+  // border: solid black 1px;
 }
 
 .sprite {

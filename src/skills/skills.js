@@ -7,7 +7,7 @@ var skillAnimation = function () {
     divSkills.setAttribute('class', 'masqueSkills');
     divSkills.style.top = 470 + 'px';
     divSkills.style.left = 1080 + 'px';
-    divSkills.style.border = 'solid black 1px';
+   // divSkills.style.border = 'solid black 1px';
     skills01 = document.createElement('img');
     skills01.src = 'img/sheet03.png';
     skills01.setAttribute('id', 'contenuSkills');
