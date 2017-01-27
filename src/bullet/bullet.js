@@ -1,3 +1,5 @@
+console.log('bullet');
+
 var explosion = function () {
     var parent = document.body.children[1].children[0];
     divExplosion01 = document.createElement('div');
@@ -28,7 +30,7 @@ var explosion = function () {
         x -= 64;
         if( x < -512) {
             clearInterval(animationExplosion);
-            $('.masqueExplosion').remove();
+            parent.removeChild(divExplosion01);
             
             key = true;
         }
@@ -57,7 +59,7 @@ var bullet = function () {
         divBullet01.style.left = parseFloat(divBullet01.style.left) + q + 'px';
         if (divBullet01.style.left >= 850 + "px") {
             clearInterval(bulletAnimation);
-            $('.divBullet01').remove();
+            parent.removeChild(divBullet01);
             explosion();
             
 

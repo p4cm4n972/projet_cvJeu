@@ -1,3 +1,5 @@
+console.log('saut');
+
 //FONCTION POUR LANIMATION DU SAUT DIRECTION GAUCHE (SCALE -1)
 var sautGauche = function () {
 
@@ -20,7 +22,7 @@ var sautGauche = function () {
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
                 x -= 64;
                 v += 20;
-                if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
+                if (document.getElementsByClassName('masque').container.style.top == 450 + "px") {
                     clearInterval(descente);
                     y = -64;
                     key = true;
@@ -62,7 +64,7 @@ var sautDroite = function () {
                 document.getElementsByClassName('masque').container.style.top = v + 'px';
                 x += 64;
                 v += 20;
-                if (document.getElementsByClassName('masque').container.style.top == 470 + "px") {
+                if (document.getElementsByClassName('masque').container.style.top == 450 + "px") {
                     clearInterval(descente);
                     y = -64;
                     x = 0;

@@ -22,6 +22,7 @@ var tirDroite = function () {
         }
     }, 1000 / 30);
 }
+console.log('tir');
 
 //FONCTION POUR LANIMATION DE TIR DIRECTION GAUCHE (SCALE -1)
 var tirGauche = function () {
@@ -48,7 +49,7 @@ var initTire = function () {
     key = false;
     y = -128;
 
-    document.getElementById('sound').play;
+    document.getElementById('sound').play();
 
     if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {
         x = -576;
