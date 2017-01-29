@@ -1,5 +1,3 @@
-console.log('moves');
-
 var moveRight = function () {
     x -= 64;
     y = 0;
@@ -20,6 +18,7 @@ var moveRight = function () {
     if (document.getElementsByClassName('masque').container.style.left == 300 + "px" ) {
         skillAnimation();
     }
+    
 };
 
 var moveLeft = function () {

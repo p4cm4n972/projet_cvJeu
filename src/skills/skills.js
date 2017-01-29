@@ -1,6 +1,3 @@
-console.log('skills');
-
-
 var skillAnimation = function () {
     divSkills = document.createElement('div');
     divSkills.setAttribute('id', 'containerSkills');
@@ -48,8 +45,9 @@ var skillAnimation = function () {
                 document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
                 document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
                 x -= 64;
-                if (x < -320) {
+                if (x < -448) {
                     clearInterval(die);
+            //APPARITION GAME OVER
                     divGameOver = document.createElement('div');
                     divGameOver.setAttribute('class', 'gameOver');
                     divGameOver.style.height = 400 + 'px';
@@ -63,11 +61,6 @@ var skillAnimation = function () {
                     document.body.children[1].children[0].appendChild(divGameOver);
                 }
             }, 3000 / 30);
-
-            //APPARITION GAME OVER
-
-
-
         }
 
 
@@ -89,6 +82,7 @@ var skillAnimation = function () {
             document.body.children[1].children[0].appendChild(divGem);
 
         }
+        
 
 
     }, 3000 / 30);

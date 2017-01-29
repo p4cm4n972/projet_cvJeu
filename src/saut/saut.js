@@ -1,5 +1,3 @@
-console.log('saut');
-
 //FONCTION POUR LANIMATION DU SAUT DIRECTION GAUCHE (SCALE -1)
 var sautGauche = function () {
 
@@ -45,7 +43,6 @@ var sautDroite = function () {
 
     document.getElementById('sound02').play();
     
-
 
     var monter = setInterval(function () {
 

@@ -1,5 +1,4 @@
 //DECLARATION VARIABLE GLOBALE
-console.log('var');
 var bullet01;
 var explosion01;
 var x = 0;

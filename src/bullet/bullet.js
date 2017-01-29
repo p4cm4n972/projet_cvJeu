@@ -1,5 +1,3 @@
-console.log('bullet');
-
 var explosion = function () {
     var parent = document.body.children[1].children[0];
     divExplosion01 = document.createElement('div');
@@ -15,18 +13,18 @@ var explosion = function () {
     parent.appendChild(divExplosion01);
     document.getElementsByClassName('masqueExplosion').containerExplosion.style.left = divBullet01.style.left;
     document.getElementsByClassName('masqueExplosion').containerExplosion.style.top = divBullet01.style.top;
-    document.getElementsByClassName('masqueExplosion').containerExplosion.style.height = 64 + "px";
-    document.getElementsByClassName('masqueExplosion').containerExplosion.style.width = 64 + "px";
+    document.getElementsByClassName('masqueExplosion').containerExplosion.style.height = 64 + 'px';
+    document.getElementsByClassName('masqueExplosion').containerExplosion.style.width = 64 + 'px';
     document.getElementsByClassName('masqueExplosion').containerExplosion.style.overflow = 'hidden';
     document.getElementsByClassName('masqueExplosion').containerExplosion.style.position = 'absolute';
 
-    document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = 0 + "px";
-    document.getElementsByClassName('spriteExplosion').contenuExplosion.style.top = 0 + "px";
+    document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = 0 + 'px';
+    document.getElementsByClassName('spriteExplosion').contenuExplosion.style.top = 0 + 'px';
     document.getElementsByClassName('spriteExplosion').contenuExplosion.style.position = 'absolute';
 
     var x = 0;
     var animationExplosion = setInterval(function () {
-        document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = x + "px";
+        document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = x + 'px';
         x -= 64;
         if( x < -512) {
             clearInterval(animationExplosion);
@@ -54,15 +52,14 @@ var bullet = function () {
     parent.appendChild(divBullet01);
 
         var q = 0;
+        var divGem;
     var bulletAnimation = setInterval(function () {
         q += 20;
         divBullet01.style.left = parseFloat(divBullet01.style.left) + q + 'px';
-        if (divBullet01.style.left >= 850 + "px") {
+        if (parseInt(divBullet01.style.left)-64 >= window.innerWidth-512) {
             clearInterval(bulletAnimation);
             parent.removeChild(divBullet01);
             explosion();
-            
-
         }
 
     }, 4000 / 30);
