@@ -4,7 +4,6 @@ var skillAnimation = function () {
     divSkills.setAttribute('class', 'masqueSkills');
     divSkills.style.top = 470 + 'px';
     divSkills.style.left = 1080 + 'px';
-    // divSkills.style.border = 'solid black 1px';
     skills01 = document.createElement('img');
     skills01.src = 'img/sheet03.png';
     skills01.setAttribute('id', 'contenuSkills');
@@ -22,7 +21,6 @@ var skillAnimation = function () {
 
     //ANIMATION SKILLS
     var posXSkills = parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.left);
-    ;
 
     var t = 0;
     var animationSkills = setInterval(function () {
@@ -37,6 +35,7 @@ var skillAnimation = function () {
         //COLLISION
         if (parseInt(document.getElementsByClassName('masque').container.style.left) >= posXSkills &&
             parseInt(document.getElementsByClassName('masque').container.style.top) == parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
+                key = false;
             clearInterval(animationSkills);
             document.body.children[1].children[0].removeChild(divSkills);
             x = 0;
@@ -78,11 +77,12 @@ var skillAnimation = function () {
             divGem.style.width = 64 + 'px';
             divGem.style.position = 'absolute';
             divGem.style.top = '490px';
-            divGem.style.left = '1080px';
+            divGem.style.left = '480px';
             gem = document.createElement('img');
             gem.src = 'img/gem01.png';
             divGem.appendChild(gem);
             document.body.children[1].children[0].appendChild(divGem);
+
 
         }
 
@@ -91,5 +91,4 @@ var skillAnimation = function () {
     }, 3000 / 30);
 
 };
-
 

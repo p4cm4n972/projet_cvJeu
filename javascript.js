@@ -79,6 +79,13 @@ window.onload = function () {
                 window.location.reload();
 
         });
+        document.getElementById('next').addEventListener('click', function () {
+        document.getElementById('cvSkills').style.display = 'none';
+        document.getElementById('next').style.display = 'none';
+        
+
+        });
+
 
 
 

@@ -15,10 +15,18 @@ var moveRight = function () {
         x -= 64;
         u += 2;
     }
-    if (document.getElementsByClassName('masque').container.style.left == 300 + "px" ) {
+    if (document.getElementsByClassName('masque').container.style.left == 300 + "px") {
         skillAnimation();
     }
-    
+
+    if (parseInt(document.getElementsByClassName('masque').container.style.left) == parseInt(divGem.style.left)) {
+        document.body.children[1].children[0].removeChild(divGem);
+        document.getElementById('score').innerHTML = 'SCORE: 100';
+        document.getElementById('cvSkills').style.display = 'inline';
+        document.getElementById('next').style.display = 'inline';
+
+    }
+
 };
 
 var moveLeft = function () {

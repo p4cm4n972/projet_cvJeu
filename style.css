@@ -78,4 +78,14 @@ h1 {
     top: 190px;
     left: 700px;
 }
+#next {
+    display: none;
+    width: 100px;
+    height: 100px;
+    border-radius: 50px;
+    position: absolute;
+    z-index: 12;
+    top: 190px;
+    left: 700px;
+}
 

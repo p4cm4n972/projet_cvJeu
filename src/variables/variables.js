@@ -16,4 +16,5 @@ document.getElementsByClassName('masque').container.style.top = v + 'px';
 document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
 document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
 
+var divGem = document.createElement('div');
 
