@@ -8,6 +8,8 @@ var v = 470;
 var t = 0;
 
 var key = true;
+var click = true;
+
 
 document.getElementsByClassName('masque').container.style.left = u + 'px';
 document.getElementsByClassName('masque').container.style.top = v + 'px';

@@ -1,7 +1,7 @@
 window.onload = function () {
         'use strict';
         //  document.getElementById('mySound').play();
-       
+
 
         window.onkeydown = function (event) {
                 var code = event.keyCode;
@@ -30,8 +30,27 @@ window.onload = function () {
                 }
 
         };
+        click = true;
+        document.getElementById('skills').addEventListener('click', function () {
+
+                document.getElementById('cvSkills').style.display = 'inline';
 
 
+        });
+
+        document.getElementById('exp').addEventListener('click', function () {
+                document.getElementById('cvExp').style.display = 'inline';
+
+        });
+        document.getElementById('cursus').addEventListener('click', function () {
+                document.getElementById('cvCursus').style.display = 'inline';
+
+        });
+
+        document.getElementById('replay').addEventListener('click', function () {
+                window.location.reload();
+
+        });
 
 
 

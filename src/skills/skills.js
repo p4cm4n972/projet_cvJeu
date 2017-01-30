@@ -58,7 +58,9 @@ var skillAnimation = function () {
                     gameOver = document.createElement('img');
                     gameOver.src = 'img/gameOver.jpg';
                     divGameOver.appendChild(gameOver);
-                    document.body.children[1].children[0].appendChild(divGameOver);
+                    document.body.children[1].children[0].appendChild(divGameOver); 
+
+                    document.getElementById('replay').style.display = 'inline';
                 }
             }, 3000 / 30);
         }
@@ -86,6 +88,7 @@ var skillAnimation = function () {
 
 
     }, 3000 / 30);
+    
 };
 
 
