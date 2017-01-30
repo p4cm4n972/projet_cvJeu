@@ -32,19 +32,47 @@ window.onload = function () {
         };
         click = true;
         document.getElementById('skills').addEventListener('click', function () {
+                if (click) {
+                        document.getElementById('cvSkills').style.display = 'inline';
+                        document.getElementById('cvExp').style.display = 'none';
+                        document.getElementById('cvCursus').style.display = 'none';
 
-                document.getElementById('cvSkills').style.display = 'inline';
 
-
+                }
+                if (click == false) {
+                        document.getElementById('cvSkills').style.display = 'none';
+                        return click = true;
+                }
+                click = false;
         });
 
         document.getElementById('exp').addEventListener('click', function () {
-                document.getElementById('cvExp').style.display = 'inline';
+                if (click) {
+                        document.getElementById('cvExp').style.display = 'inline';
+                        document.getElementById('cvSkills').style.display = 'none';
+                        document.getElementById('cvCursus').style.display = 'none';
 
+
+                }
+                if (click == false) {
+                        document.getElementById('cvExp').style.display = 'none';
+                        return click = true;
+                }
+                click = false;
         });
         document.getElementById('cursus').addEventListener('click', function () {
-                document.getElementById('cvCursus').style.display = 'inline';
+                if (click) {
+                        document.getElementById('cvCursus').style.display = 'inline';
+                        document.getElementById('cvSkills').style.display = 'none';
+                        document.getElementById('cvExp').style.display = 'none';
 
+
+                }
+                if (click == false) {
+                        document.getElementById('cvCursus').style.display = 'none';
+                        return click = true;
+                }
+                click = false;
         });
 
         document.getElementById('replay').addEventListener('click', function () {

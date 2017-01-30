@@ -4,7 +4,7 @@ var skillAnimation = function () {
     divSkills.setAttribute('class', 'masqueSkills');
     divSkills.style.top = 470 + 'px';
     divSkills.style.left = 1080 + 'px';
-   // divSkills.style.border = 'solid black 1px';
+    // divSkills.style.border = 'solid black 1px';
     skills01 = document.createElement('img');
     skills01.src = 'img/sheet03.png';
     skills01.setAttribute('id', 'contenuSkills');
@@ -47,7 +47,7 @@ var skillAnimation = function () {
                 x -= 64;
                 if (x < -448) {
                     clearInterval(die);
-            //APPARITION GAME OVER
+                    //APPARITION GAME OVER
                     divGameOver = document.createElement('div');
                     divGameOver.setAttribute('class', 'gameOver');
                     divGameOver.style.height = 400 + 'px';
@@ -58,8 +58,9 @@ var skillAnimation = function () {
                     gameOver = document.createElement('img');
                     gameOver.src = 'img/gameOver.jpg';
                     divGameOver.appendChild(gameOver);
-                    document.body.children[1].children[0].appendChild(divGameOver); 
+                    document.body.children[1].children[0].appendChild(divGameOver);
 
+                    //APPARITION BOUTON REJOUER
                     document.getElementById('replay').style.display = 'inline';
                 }
             }, 3000 / 30);
@@ -84,11 +85,11 @@ var skillAnimation = function () {
             document.body.children[1].children[0].appendChild(divGem);
 
         }
-        
+
 
 
     }, 3000 / 30);
-    
+
 };
 
 
