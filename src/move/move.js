@@ -19,7 +19,7 @@ var moveRight = function () {
         skillAnimation();
     }
 
-    if (parseInt(document.getElementsByClassName('masque').container.style.left) == parseInt(divGem.style.left)) {
+    if (parseInt(document.getElementsByClassName('masque').container.style.left) >= parseInt(divGem.style.left)-64) {
         document.body.children[1].children[0].removeChild(divGem);
         document.getElementById('score').innerHTML = 'SCORE: 100';
         document.getElementById('cvSkills').style.display = 'inline';
