@@ -33,7 +33,7 @@ var skillAnimation = function () {
         }
 
         //COLLISION
-        if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left)+64   && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+        if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32   && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
                 key = false;
             clearInterval(animationSkills);

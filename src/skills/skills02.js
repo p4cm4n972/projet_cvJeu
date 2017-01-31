@@ -4,7 +4,6 @@ var skillAnimation02 = function () {
     divSkills02.setAttribute('class', 'masqueSkills02');
     divSkills02.style.top = 470 + 'px';
     divSkills02.style.left = 1080 + 'px';
-    divSkills02.style.border = 'solid black 1px';
     skills02 = document.createElement('img');
     skills02.src = 'img/bullet02.png';
     document.body.children[1].children[0].appendChild(divSkills02);
@@ -23,7 +22,7 @@ var skillAnimation02 = function () {
         posXSkills02 -= 32;
        
         //COLLISION
-        if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left)+64   && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+        if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32   && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills02').containerSkills02.style.top)) {
             clearInterval(animationSkills02);
             document.body.children[1].children[0].removeChild(divSkills02);
