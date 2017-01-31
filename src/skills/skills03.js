@@ -39,8 +39,8 @@ var skillAnimation03 = function () {
             divWin.style.height = 150 + 'px';
             divWin.style.width = 200 + 'px';
             divWin.style.position = 'absolute';
-            divWin.style.top = '190px';
-            divWin.style.left = '500px';
+            divWin.style.top = document.getElementsByClassName('masque').container.style.top;
+            divWin.style.left = document.getElementsByClassName('masque').container.style.left;
             win = document.createElement('img');
             win.src = 'img/win.jpg';
             divWin.appendChild(win);

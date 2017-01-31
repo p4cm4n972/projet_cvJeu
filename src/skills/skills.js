@@ -33,8 +33,8 @@ var skillAnimation = function () {
         }
 
         //COLLISION
-        if (parseInt(document.getElementsByClassName('masque').container.style.left) >= posXSkills &&
-            parseInt(document.getElementsByClassName('masque').container.style.top) == parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
+        if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left)+64   && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+            parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
                 key = false;
             clearInterval(animationSkills);
             document.body.children[1].children[0].removeChild(divSkills);
@@ -66,7 +66,7 @@ var skillAnimation = function () {
         }
 
 
-        if (posXSkills <= 250) {
+        if (posXSkills <= 150) {
             clearInterval(animationSkills);
             document.body.children[1].children[0].removeChild(divSkills);
 

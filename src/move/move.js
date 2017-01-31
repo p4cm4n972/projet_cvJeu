@@ -19,14 +19,14 @@ var moveRight = function () {
         skillAnimation();
     }
 
-    if (parseInt(document.getElementsByClassName('masque').container.style.left) == parseInt(divGem.style.left)-64) {
+    if (parseInt(divGem.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64   && parseInt(divGem.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left) ) {
         document.body.children[1].children[0].removeChild(divGem);
         document.getElementById('score').innerHTML = 'SCORE: 100';
         document.getElementById('cvSkills').style.display = 'inline';
         document.getElementById('next').style.display = 'inline';
 
     }
-    if (parseInt(document.getElementsByClassName('masque').container.style.left) == parseInt(divGem02.style.left)-64) {
+    if (parseInt(divGem02.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64   && parseInt(divGem02.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left) ) {
         document.body.children[1].children[0].removeChild(divGem02);
         document.getElementById('score').innerHTML = 'SCORE: 200';
         document.getElementById('cvExp').style.display = 'inline';

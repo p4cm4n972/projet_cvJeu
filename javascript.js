@@ -2,6 +2,7 @@ window.onload = function () {
         'use strict';
         //  document.getElementById('mySound').play();
 
+        
 
         window.onkeydown = function (event) {
                 var code = event.keyCode;
@@ -20,16 +21,22 @@ window.onload = function () {
                         case 38: // UP ARROW - ANIMATION SAUT
                                 if (key == true) {
                                         initSaut();
-                                };
+                                }
                                 break;
                         case 32:// SPACEBAR - ANIMATION TIR 
                                 if (key == true) {
                                         initTire();
-                                };
+                                }
                                 break;
                 }
 
-        };
+        };// KEYCODE
+
+
+
+
+
+        //CLICK
         click = true;
         document.getElementById('skills').addEventListener('click', function () {
                 if (click) {
@@ -81,15 +88,15 @@ window.onload = function () {
         });
 
         document.getElementById('next').addEventListener('click', function () {
-        document.getElementById('cvSkills').style.display = 'none';
-        document.getElementById('next').style.display = 'none';
-        skillAnimation02();
+                document.getElementById('cvSkills').style.display = 'none';
+                document.getElementById('next').style.display = 'none';
+                skillAnimation02();
         });
 
         document.getElementById('next2').addEventListener('click', function () {
-        document.getElementById('cvExp').style.display = 'none';
-        document.getElementById('next2').style.display = 'none';
-        skillAnimation03();
+                document.getElementById('cvExp').style.display = 'none';
+                document.getElementById('next2').style.display = 'none';
+                skillAnimation03();
         });
 
 

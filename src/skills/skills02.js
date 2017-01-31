@@ -23,8 +23,8 @@ var skillAnimation02 = function () {
         posXSkills02 -= 32;
        
         //COLLISION
-        if (parseInt(document.getElementsByClassName('masque').container.style.left) >= posXSkills02 &&
-            parseInt(document.getElementsByClassName('masque').container.style.top) == 470) {
+        if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left)+64   && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+            parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills02').containerSkills02.style.top)) {
             clearInterval(animationSkills02);
             document.body.children[1].children[0].removeChild(divSkills02);
             x = 0;
@@ -57,7 +57,7 @@ var skillAnimation02 = function () {
         }
 
 
-        if (posXSkills02 <= 250) {
+        if (posXSkills02 < 150) {
             clearInterval(animationSkills02);
             document.body.children[1].children[0].removeChild(divSkills02);
 

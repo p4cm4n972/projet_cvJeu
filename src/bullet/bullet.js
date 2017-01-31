@@ -30,7 +30,6 @@ var explosion = function () {
             clearInterval(animationExplosion);
             parent.removeChild(divExplosion01);
             
-            key = true;
         }
 
     }, 3000 / 30);
@@ -60,10 +59,10 @@ var bullet = function () {
             clearInterval(bulletAnimation);
             parent.removeChild(divBullet01);
 
-            key = true;
 
-            
+
             explosion();
+            key = true;
         }
 
     }, 4000 / 30);
