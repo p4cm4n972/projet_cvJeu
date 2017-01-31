@@ -1,10 +1,17 @@
 //DECLARATION VARIABLE GLOBALE
+
+if (document.body.offsetWidth <= 1349) {
+    u = 250;
+    v = 470;
+}
+if (document.body.offsetWidth > 1349) {
+    u = 300;
+    v = 470;
+}
 var bullet01;
 var explosion01;
 var x = 0;
 var y = 0;
-var u = 250;
-var v = 470;
 var t = 0;
 
 var key = true;
