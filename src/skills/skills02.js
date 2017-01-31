@@ -1,28 +1,30 @@
 var skillAnimation02 = function () {
     divSkills02 = document.createElement('div');
     divSkills02.setAttribute('id', 'containerSkills02');
+    divSkills02.setAttribute('class', 'masqueSkills02');
     divSkills02.style.top = 470 + 'px';
     divSkills02.style.left = 1080 + 'px';
-    divSkills02.style.height = 64 + 'px';
-    divSkills02.style.width = 64 + 'px';
-    divSkills02.style.position = 'absolute';
+    divSkills02.style.border = 'solid black 1px';
     skills02 = document.createElement('img');
     skills02.src = 'img/bullet02.png';
     document.body.children[1].children[0].appendChild(divSkills02);
     divSkills02.appendChild(skills02);
+     document.getElementsByClassName('masqueSkills02').containerSkills02.style.height = 64 + 'px';
+    document.getElementsByClassName('masqueSkills02').containerSkills02.style.width = 64 + 'px';
+    document.getElementsByClassName('masqueSkills02').containerSkills02.style.overflow = 'hidden';
+    document.getElementsByClassName('masqueSkills02').containerSkills02.style.position = 'absolute';
 
 
     //ANIMATION SKILLS
-    var posXSkills02 = parseInt(divSkills02.style.left);
+    var posXSkills02 = parseInt(document.getElementsByClassName('masqueSkills02').containerSkills02.style.left);
 
     var animationSkills02 = setInterval(function () {
-        divSkills02.style.left = posXSkills02 + 'px';
-        posXSkills02 -= 30;
+        document.getElementsByClassName('masqueSkills02').containerSkills02.style.left = posXSkills02 + 'px';
+        posXSkills02 -= 32;
        
         //COLLISION
-        if (parseInt(document.getElementsByClassName('masque').container.style.left) == posXSkills02 &&
-            parseInt(document.getElementsByClassName('masque').container.style.top) == parseInt(divSkills02.style.top)) {
-                key = false;
+        if (parseInt(document.getElementsByClassName('masque').container.style.left) >= posXSkills02 &&
+            parseInt(document.getElementsByClassName('masque').container.style.top) == 470) {
             clearInterval(animationSkills02);
             document.body.children[1].children[0].removeChild(divSkills02);
             x = 0;
@@ -50,6 +52,8 @@ var skillAnimation02 = function () {
                     document.getElementById('replay').style.display = 'inline';
                 }
             }, 3000 / 30);
+                key = false;
+            
         }
 
 
