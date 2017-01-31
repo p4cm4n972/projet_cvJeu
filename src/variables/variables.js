@@ -17,4 +17,6 @@ document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
 document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
 
 var divGem = document.createElement('div');
+var divGem02 = document.createElement('div');
+
 

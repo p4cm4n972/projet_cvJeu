@@ -84,8 +84,12 @@ window.onload = function () {
         document.getElementById('cvSkills').style.display = 'none';
         document.getElementById('next').style.display = 'none';
         skillAnimation02();
-        
+        });
 
+        document.getElementById('next2').addEventListener('click', function () {
+        document.getElementById('cvExp').style.display = 'none';
+        document.getElementById('next2').style.display = 'none';
+        skillAnimation03();
         });
 
 
