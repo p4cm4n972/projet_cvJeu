@@ -56,9 +56,13 @@ var bullet = function () {
     var bulletAnimation = setInterval(function () {
         q += 20;
         divBullet01.style.left = parseFloat(divBullet01.style.left) + q + 'px';
-        if (parseInt(divBullet01.style.left)-64 >= 1000) {
+        if (parseInt(divBullet01.style.left) >= 1000) {
             clearInterval(bulletAnimation);
             parent.removeChild(divBullet01);
+
+            key = true;
+
+            
             explosion();
         }
 

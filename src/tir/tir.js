@@ -3,6 +3,8 @@ var tirDroite = function () {
     var shoot = setInterval(function () {
 
 
+
+
         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
         document.getElementsByClassName('masque').container.style.left = u + 'px';
@@ -48,6 +50,7 @@ var tirGauche = function () {
 var initTire = function () {
     key = false;
     y = -128;
+        compteurTir = compteurTir + 1;
 
     document.getElementById('sound').play();
 

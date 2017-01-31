@@ -3,16 +3,14 @@ var skillAnimation03 = function () {
     divPiece = document.createElement('div');
     divPiece.setAttribute('id', 'containerPiece');
     divPiece.setAttribute('class', 'masquePiece');
-    divPiece.style.top = '350px';
-    divPiece.style.left = '1000px';
     piece01 = document.createElement('img');
     piece01.src = 'img/sheet04.png';
     piece01.setAttribute('id', 'contenuPiece');
     piece01.setAttribute('class', 'spritePiece');
     divPiece.appendChild(piece01);
     parent.appendChild(divPiece);
-    document.getElementsByClassName('masquePiece').containerPiece.style.left = 1080 + 'px';
-    document.getElementsByClassName('masquePiece').containerPiece.style.top = 350 + 'px';
+    document.getElementsByClassName('masquePiece').containerPiece.style.left = 1000 + 'px';
+    document.getElementsByClassName('masquePiece').containerPiece.style.top = 420 + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.height = 128 + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.width = 128 + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.overflow = 'hidden';
@@ -26,11 +24,32 @@ var skillAnimation03 = function () {
     var animationPiece = setInterval(function () {
         document.getElementsByClassName('spritePiece').contenuPiece.style.left = p + 'px';
         p -= 128;
-        if( p <= -512) {
+        if (p <= -512) {
             p = 0;
-            
-            key = true;
+        }
+        if (compteurTir >= 5) {
+            clearInterval(animationPiece);
+            document.body.children[1].children[0].removeChild(divPiece);
+            document.getElementById('cvCursus').style.display = 'inline';
+            document.getElementById('score').innerHTML = 'SCORE: 300';
+
+            // YOU WIN
+            divWin = document.createElement('div');
+            divWin.setAttribute('class', 'win');
+            divWin.style.height = 150 + 'px';
+            divWin.style.width = 200 + 'px';
+            divWin.style.position = 'absolute';
+            divWin.style.top = '190px';
+            divWin.style.left = '500px';
+            win = document.createElement('img');
+            win.src = 'img/win.jpg';
+            divWin.appendChild(win);
+            document.body.children[1].children[0].appendChild(divWin);
+
+
+
         }
 
     }, 3000 / 30);
+
 };
