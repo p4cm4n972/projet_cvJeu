@@ -9,9 +9,9 @@ window.onload = function () {
 
                 switch (code) {
 
-                        case 37://LEFT ARROW - MOUVEMENT VERS LA GAUCHE
-                              //  moveLeft();
-                                break;
+                      /*  case 37://LEFT ARROW - MOUVEMENT VERS LA GAUCHE
+                               moveLeft();
+                                break;*/
 
                         case 39://RIGHT ARROW - MOUVEMENT VERS LA DROITE
                                 moveRight();

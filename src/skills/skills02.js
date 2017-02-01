@@ -3,7 +3,7 @@ var skillAnimation02 = function () {
     divSkills02.setAttribute('id', 'containerSkills02');
     divSkills02.setAttribute('class', 'masqueSkills02');
     divSkills02.style.top = 470 + 'px';
-    divSkills02.style.left = 1080 + 'px';
+    divSkills02.style.left = document.getElementById('fondAnime1').clientWidth + 'px';
     skills02 = document.createElement('img');
     skills02.src = 'img/bullet02.png';
     document.body.children[1].children[0].appendChild(divSkills02);
@@ -67,7 +67,7 @@ var skillAnimation02 = function () {
             divGem02.style.width = 64 + 'px';
             divGem02.style.position = 'absolute';
             divGem02.style.top = 490 + 'px';
-            divGem02.style.left = 564 + 'px';
+            divGem02.style.left = 620 + 'px';
             gem02 = document.createElement('img');
             gem02.src = 'img/gem02.png';
             divGem02.appendChild(gem02);

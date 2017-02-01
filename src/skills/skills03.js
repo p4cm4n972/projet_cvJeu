@@ -9,7 +9,7 @@ var skillAnimation03 = function () {
     piece01.setAttribute('class', 'spritePiece');
     divPiece.appendChild(piece01);
     parent.appendChild(divPiece);
-    document.getElementsByClassName('masquePiece').containerPiece.style.left = 1000 + 'px';
+    document.getElementsByClassName('masquePiece').containerPiece.style.left = (document.getElementById('fondAnime1').clientWidth) + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.top = 420 + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.height = 128 + 'px';
     document.getElementsByClassName('masquePiece').containerPiece.style.width = 128 + 'px';
