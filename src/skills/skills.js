@@ -77,7 +77,7 @@ var skillAnimation = function () {
             divGem.style.width = 64 + 'px';
             divGem.style.position = 'absolute';
             divGem.style.top = '490px';
-            divGem.style.left = '560px';
+            divGem.style.left = '472px';
             gem = document.createElement('img');
             gem.src = 'img/gem01.png';
             divGem.appendChild(gem);
@@ -85,6 +85,8 @@ var skillAnimation = function () {
 
 
         }
+
+        
 
 
 
