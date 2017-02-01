@@ -22,13 +22,19 @@ var explosion = function () {
     document.getElementsByClassName('spriteExplosion').contenuExplosion.style.top = 0 + 'px';
     document.getElementsByClassName('spriteExplosion').contenuExplosion.style.position = 'absolute';
 
+       
+
     var x = 0;
     var animationExplosion = setInterval(function () {
+        //AUDIO EXPLOSION 
+        document.getElementById('soundExplosion').play();
         document.getElementsByClassName('spriteExplosion').contenuExplosion.style.left = x + 'px';
         x -= 64;
         if( x < -512) {
             clearInterval(animationExplosion);
             parent.removeChild(divExplosion01);
+        document.getElementById('soundExplosion').stop();
+            
             
         }
 
@@ -59,6 +65,7 @@ var bullet = function () {
             clearInterval(bulletAnimation);
             parent.removeChild(divBullet01);
 
+            
 
 
             explosion();
