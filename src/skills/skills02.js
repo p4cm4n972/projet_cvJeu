@@ -8,7 +8,7 @@ var skillAnimation02 = function () {
     skills02.src = 'img/bullet02.png';
     document.body.children[1].children[0].appendChild(divSkills02);
     divSkills02.appendChild(skills02);
-     document.getElementsByClassName('masqueSkills02').containerSkills02.style.height = 64 + 'px';
+    document.getElementsByClassName('masqueSkills02').containerSkills02.style.height = 64 + 'px';
     document.getElementsByClassName('masqueSkills02').containerSkills02.style.width = 64 + 'px';
     document.getElementsByClassName('masqueSkills02').containerSkills02.style.overflow = 'hidden';
     document.getElementsByClassName('masqueSkills02').containerSkills02.style.position = 'absolute';
@@ -20,9 +20,9 @@ var skillAnimation02 = function () {
     var animationSkills02 = setInterval(function () {
         document.getElementsByClassName('masqueSkills02').containerSkills02.style.left = posXSkills02 + 'px';
         posXSkills02 -= 32;
-       
+
         //COLLISION
-        if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32   && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+        if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32 && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills02').containerSkills02.style.top)) {
             clearInterval(animationSkills02);
             document.body.children[1].children[0].removeChild(divSkills02);
@@ -51,8 +51,8 @@ var skillAnimation02 = function () {
                     document.getElementById('replay').style.display = 'inline';
                 }
             }, 3000 / 30);
-                key = false;
-            
+            key = false;
+
         }
 
 
@@ -73,7 +73,7 @@ var skillAnimation02 = function () {
             divGem02.appendChild(gem02);
             document.body.children[1].children[0].appendChild(divGem02);
 
-            
+
 
 
         }
