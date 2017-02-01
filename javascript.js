@@ -77,8 +77,8 @@ window.onload = function () {
                 }
                 if (click == false) {
                         document.getElementById('cvCursus').style.display = 'none';
-                        return click = true;
-                }
+            return click = true;
+        }
                 click = false;
         });
 
