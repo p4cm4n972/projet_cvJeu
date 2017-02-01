@@ -61,7 +61,7 @@ var bullet = function () {
     var bulletAnimation = setInterval(function () {
         q += 20;
         divBullet01.style.left = parseFloat(divBullet01.style.left) + q + 'px';
-        if (parseInt(divBullet01.style.left) >= (document.getElementById('fondAnime1').clientWidth - 128 )) {
+        if (parseInt(divBullet01.style.left) >= (document.getElementById('fondAnime1').clientWidth - 64 )) {
             clearInterval(bulletAnimation);
             parent.removeChild(divBullet01);
 
