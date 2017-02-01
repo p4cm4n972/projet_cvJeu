@@ -21,7 +21,7 @@ var moveRight = function () {
 
     if (parseInt(divGem.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left)) {
         document.body.children[1].children[0].removeChild(divGem);
-       // document.getElementById('soundCheck').play();
+        document.getElementById('soundCheck').play();
 
         document.getElementById('score').innerHTML = 'SCORE: 100';
         document.getElementById('cvSkills').style.display = 'inline';0

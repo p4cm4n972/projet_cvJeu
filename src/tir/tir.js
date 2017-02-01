@@ -24,7 +24,6 @@ var tirDroite = function () {
         }
     }, 1000 / 30);
 }
-console.log('tir');
 
 //FONCTION POUR LANIMATION DE TIR DIRECTION GAUCHE (SCALE -1)
 var tirGauche = function () {
