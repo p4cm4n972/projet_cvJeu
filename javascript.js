@@ -1,6 +1,6 @@
 window.onload = function () {
         'use strict';
-        //  document.getElementById('mySound').play();
+         document.getElementById('mySound').play();
 
         
 

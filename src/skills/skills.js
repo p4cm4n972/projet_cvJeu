@@ -37,7 +37,7 @@ var skillAnimation = function () {
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
                 key = false;
             clearInterval(animationSkills);
-            document.body.children[1].children[0].removeChild(divSkills);
+            document.body.children[1].children[0].removeChild(document.body.children[1].children[0].children[3]);
             x = 0;
             y = -192;
             var die = setInterval(function () {
@@ -80,8 +80,8 @@ var skillAnimation = function () {
             divGem.style.left = '472px';
             gem = document.createElement('img');
             gem.src = 'img/gem01.png';
-            divGem.appendChild(gem);
             document.body.children[1].children[0].appendChild(divGem);
+            divGem.appendChild(gem);
 
 
         }
