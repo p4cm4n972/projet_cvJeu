@@ -33,8 +33,8 @@ var explosion = function () {
         if( x < -512) {
             clearInterval(animationExplosion);
             parent.removeChild(divExplosion01);
-        document.getElementById('soundExplosion').stop();
             
+            key = true;
             
         }
 
@@ -69,7 +69,6 @@ var bullet = function () {
 
 
             explosion();
-            key = true;
         }
 
     }, 4000 / 30);
