@@ -11,7 +11,7 @@ h1 {
     height: 100%;
 }
 #background02 {
-   background-image: url('img/fond02.jpg');
+    background-image: url('img/fond02.jpg');
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -21,7 +21,7 @@ h1 {
 }
 .fondAnime1 {
     background-image: url('img/fond01.jpg');
-    background-size: contain;
+   background-size: contain;
     width: 70%;
     height: 450px;
     margin: auto;
