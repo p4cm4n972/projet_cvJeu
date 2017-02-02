@@ -48,6 +48,8 @@ var tirGauche = function () {
 }
 var initTire = function () {
     key = false;
+             document.getElementById('tire').style.display = 'none';
+
     y = -128;
         compteurTir = compteurTir + 1;
 

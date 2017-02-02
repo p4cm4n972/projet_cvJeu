@@ -1,6 +1,7 @@
 var moveRight = function () {
     x -= 64;
     y = 0;
+     document.getElementById('talk').style.display = 'none';
     document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(1)';
 
     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
@@ -16,6 +17,12 @@ var moveRight = function () {
         u += 2;
     }
     if (document.getElementsByClassName('masque').container.style.left == 300 + "px") {
+
+ document.getElementById('saute').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+    document.getElementById('saute').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+    document.getElementById('saute').style.position = 'absolute';
+    document.getElementById('saute').style.display = 'inline';
+
         skillAnimation();
     }
 

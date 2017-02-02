@@ -32,6 +32,14 @@ window.onload = function () {
 
         };// KEYCODE
 
+if ( u == 250 || 300 ) {
+        document.getElementById('talk').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+        document.getElementById('talk').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+        document.getElementById('talk').style.position = 'absolute';
+        document.getElementById('talk').style.display = 'inline';
+} 
+       
+        
 
 
 

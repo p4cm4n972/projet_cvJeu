@@ -1,4 +1,9 @@
 var skillAnimation03 = function () {
+document.getElementById('tire').style.display = 'inline';
+    document.getElementById('tire').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+    document.getElementById('tire').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+    document.getElementById('tire').style.position = 'absolute';
+
     var parent = document.body.children[1].children[0];
     divPiece = document.createElement('div');
     divPiece.setAttribute('id', 'containerPiece');

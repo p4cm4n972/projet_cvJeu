@@ -4,6 +4,7 @@ var sautGauche = function () {
     //EFFET SONORE DU SAUT
     document.getElementById('sound02').play();
 
+
     var monter = setInterval(function () {
         document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
         document.getElementsByClassName('sprite').contenu.style.top = y + 'px';
@@ -42,7 +43,7 @@ var sautDroite = function () {
     //EFFET SONORE DU SAUT
 
     document.getElementById('sound02').play();
-    
+
 
     var monter = setInterval(function () {
 
@@ -81,6 +82,7 @@ var sautDroite = function () {
 };
 var initSaut = function () {
     key = false;
+    document.getElementById('saute').style.display = 'none';
 
     y = -64;
     if (document.getElementsByClassName('sprite').contenu.style.transform == 'scaleX(-1)') {

@@ -1,4 +1,8 @@
 var skillAnimation02 = function () {
+    document.getElementById('saute').style.display = 'inline';
+    document.getElementById('saute').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+    document.getElementById('saute').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+    document.getElementById('saute').style.position = 'absolute';
     divSkills02 = document.createElement('div');
     divSkills02.setAttribute('id', 'containerSkills02');
     divSkills02.setAttribute('class', 'masqueSkills02');

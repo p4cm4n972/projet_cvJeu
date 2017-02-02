@@ -52,6 +52,19 @@ h1 {
        
 }
 
+#saute {
+display: none;
+    position: absolute;
+}
+#talk {
+display: none;
+    position: absolute;
+}
+#tire {
+    display: none;
+    position: absolute;
+}
+
 #cv {
     display: block;
 }

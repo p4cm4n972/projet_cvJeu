@@ -1,4 +1,6 @@
 var skillAnimation = function () {
+   
+
     divSkills = document.createElement('div');
     divSkills.setAttribute('id', 'containerSkills');
     divSkills.setAttribute('class', 'masqueSkills');
@@ -33,9 +35,9 @@ var skillAnimation = function () {
         }
 
         //COLLISION
-        if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32   && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
+        if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32 && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
-                key = false;
+            key = false;
             clearInterval(animationSkills);
             document.body.children[1].children[0].removeChild(document.body.children[1].children[0].children[3]);
             x = 0;
@@ -86,7 +88,7 @@ var skillAnimation = function () {
 
         }
 
-        
+
 
 
 
