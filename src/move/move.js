@@ -27,7 +27,8 @@ var moveRight = function () {
     }
 
     if (parseInt(divGem.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left)) {
-        document.body.children[1].children[0].removeChild(divGem);
+       document.getElementsByClassName('gem01').gem01.style.display = 'none';
+       document.getElementsByClassName('gem01').gem01.style.top = '0px';
         document.getElementById('soundCheck').play();
 
         document.getElementById('score').innerHTML = 'SCORE: 100';
@@ -38,7 +39,8 @@ var moveRight = function () {
 
 
     if (parseInt(divGem02.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem02.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left)) {
-        document.body.children[1].children[0].removeChild(divGem02);
+       document.getElementsByClassName('gem02').gem02.style.display = 'none';
+       document.getElementsByClassName('gem02').gem02.style.top = '0px';
         document.getElementById('soundCheck').play();
 
         document.getElementById('score').innerHTML = 'SCORE: 200';

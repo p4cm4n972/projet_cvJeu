@@ -1,5 +1,5 @@
 var skillAnimation = function () {
-   
+
 
     divSkills = document.createElement('div');
     divSkills.setAttribute('id', 'containerSkills');
@@ -75,6 +75,7 @@ var skillAnimation = function () {
             //APPARITION GEM 
             divGem = document.createElement('div');
             divGem.setAttribute('class', 'gem01');
+            divGem.setAttribute('id', 'gem01');
             divGem.style.height = 64 + 'px';
             divGem.style.width = 64 + 'px';
             divGem.style.position = 'absolute';

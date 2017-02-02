@@ -67,6 +67,7 @@ var skillAnimation02 = function () {
             //APPARITION GEM 
             divGem02 = document.createElement('div');
             divGem02.setAttribute('class', 'gem02');
+            divGem02.setAttribute('id', 'gem02');
             divGem02.style.height = 64 + 'px';
             divGem02.style.width = 64 + 'px';
             divGem02.style.position = 'absolute';
