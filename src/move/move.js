@@ -26,7 +26,7 @@ var moveRight = function () {
         skillAnimation();
     }
 
-    if (parseInt(divGem.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left)) {
+    if (parseInt(divGem.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left) && parseInt(divGem.style.top) == 470) {
        document.getElementsByClassName('gem01').gem01.style.display = 'none';
        document.getElementsByClassName('gem01').gem01.style.top = '0px';
         document.getElementById('soundCheck').play();
@@ -38,7 +38,7 @@ var moveRight = function () {
     }
 
 
-    if (parseInt(divGem02.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem02.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left)) {
+    if (parseInt(divGem02.style.left) <= parseInt(document.getElementsByClassName('masque').container.style.left) + 64 && parseInt(divGem02.style.left) >= parseInt(document.getElementsByClassName('masque').container.style.left) && parseInt(divGem02.style.top) == 470) {
        document.getElementsByClassName('gem02').gem02.style.display = 'none';
        document.getElementsByClassName('gem02').gem02.style.top = '0px';
         document.getElementById('soundCheck').play();

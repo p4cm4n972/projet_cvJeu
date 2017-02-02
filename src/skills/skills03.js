@@ -1,5 +1,5 @@
 var skillAnimation03 = function () {
-document.getElementById('tire').style.display = 'inline';
+    document.getElementById('tire').style.display = 'inline';
     document.getElementById('tire').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
     document.getElementById('tire').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
     document.getElementById('tire').style.position = 'absolute';
@@ -45,11 +45,17 @@ document.getElementById('tire').style.display = 'inline';
             divWin.style.width = 200 + 'px';
             divWin.style.position = 'absolute';
             divWin.style.top = document.getElementsByClassName('masque').container.style.top;
-            divWin.style.left = document.getElementsByClassName('masque').container.style.left;
+            divWin.style.left = parseInt(document.getElementsByClassName('masque').container.style.left) - 64 + 'px';
             win = document.createElement('img');
             win.src = 'img/win.jpg';
             divWin.appendChild(win);
             document.body.children[1].children[0].appendChild(divWin);
+
+            document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(-1)';
+            document.getElementsByClassName('sprite').contenu.style.left = 0 + 'px';
+            document.getElementsByClassName('sprite').contenu.style.top = 0 + 'px';
+            document.getElementsByClassName('masque').container.style.left = '668px';
+            document.getElementsByClassName('masque').container.style.top = '470px';
 
 
 
