@@ -37,8 +37,8 @@ var skillAnimation = function () {
         //COLLISION
         if (posXSkills <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32 && posXSkills >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
-            key = false;
             clearInterval(animationSkills);
+            key = false;
             document.body.children[1].children[0].removeChild(document.body.children[1].children[0].children[3]);
             x = 0;
             y = -192;
@@ -64,7 +64,7 @@ var skillAnimation = function () {
                     //APPARITION BOUTON REJOUER
                     document.getElementById('replay').style.display = 'inline';
                 }
-            }, 3000 / 30);
+            }, 4000 / 30);
         }
 
 

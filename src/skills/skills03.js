@@ -38,29 +38,29 @@ var skillAnimation03 = function () {
             document.getElementById('cvCursus').style.display = 'inline';
             document.getElementById('score').innerHTML = 'SCORE: 300';
 
+          
             // YOU WIN
             divWin = document.createElement('div');
             divWin.setAttribute('class', 'win');
-            divWin.style.height = 150 + 'px';
-            divWin.style.width = 200 + 'px';
+            divWin.style.height = 64 + 'px';
+            divWin.style.width = 64 + 'px';
             divWin.style.position = 'absolute';
             divWin.style.top = document.getElementsByClassName('masque').container.style.top;
-            divWin.style.left = parseInt(document.getElementsByClassName('masque').container.style.left) - 64 + 'px';
+            divWin.style.left = parseInt(document.getElementsByClassName('masque').container.style.left) - 128 + 'px';
             win = document.createElement('img');
             win.src = 'img/win.jpg';
             divWin.appendChild(win);
             document.body.children[1].children[0].appendChild(divWin);
 
-            document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(-1)';
-            document.getElementsByClassName('sprite').contenu.style.left = 0 + 'px';
-            document.getElementsByClassName('sprite').contenu.style.top = 0 + 'px';
-            document.getElementsByClassName('masque').container.style.left = '668px';
-            document.getElementsByClassName('masque').container.style.top = '470px';
+
+
 
 
 
         }
+        
 
     }, 3000 / 30);
+
 
 };

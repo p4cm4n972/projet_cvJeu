@@ -105,6 +105,7 @@ if ( u == 250 || 300 ) {
                 document.getElementById('cvExp').style.display = 'none';
                 document.getElementById('next2').style.display = 'none';
                 skillAnimation03();
+                 
         });
 
 
