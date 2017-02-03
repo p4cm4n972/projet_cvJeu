@@ -50,12 +50,14 @@ body {
     width: 64px;
    overflow: hidden;
    position: absolute;
+   z-index: 15;
 }
 
 .sprite {
     left: 0px;
     top: 0px;
    position: absolute;
+   z-index: 15;
        
 }
 #cliques {
@@ -82,6 +84,7 @@ display: none;
 #cvSkills {
     display: none;
     position: absolute;
+    z-index: ;
 }
 #cvExp {
     display: none;
