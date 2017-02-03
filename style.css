@@ -1,4 +1,11 @@
-h1 {
+body {
+    background-image: url('img/fond01.jpg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    
+}
+    h1 {
     padding-left: 50px;
 }
 #background01 {
@@ -51,7 +58,11 @@ h1 {
    position: absolute;
        
 }
-
+#cliques {
+display: none;
+    position: absolute;
+    z-index: 12;
+}
 #saute {
 display: none;
     position: absolute;

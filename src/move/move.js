@@ -32,8 +32,13 @@ var moveRight = function () {
         document.getElementById('soundCheck').play();
 
         document.getElementById('score').innerHTML = 'SCORE: 100';
-        document.getElementById('cvSkills').style.display = 'inline';0
+        document.getElementById('cvSkills').style.display = 'inline';
         document.getElementById('next').style.display = 'inline';
+
+        document.getElementById('cliques').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+        document.getElementById('cliques').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+        document.getElementById('cliques').style.position = 'absolute';
+        document.getElementById('cliques').style.display = 'inline';
 
     }
 
@@ -46,6 +51,11 @@ var moveRight = function () {
         document.getElementById('score').innerHTML = 'SCORE: 200';
         document.getElementById('cvExp').style.display = 'inline';
         document.getElementById('next2').style.display = 'inline';
+
+        document.getElementById('cliques').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
+        document.getElementById('cliques').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
+        document.getElementById('cliques').style.position = 'absolute';
+        document.getElementById('cliques').style.display = 'inline';
 
     }
 
