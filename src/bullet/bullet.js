@@ -1,5 +1,5 @@
 var explosion = function () {
-    var parent = document.body.children[1].children[0];
+    var parent = document.body.children[1].children[1];
     divExplosion01 = document.createElement('div');
     divExplosion01.setAttribute('id', 'containerExplosion');
     divExplosion01.setAttribute('class', 'masqueExplosion');
@@ -41,7 +41,7 @@ var explosion = function () {
     }, 3000 / 30);
 };
 var bullet = function () {
-    var parent = document.body.children[1].children[0];
+    var parent = document.body.children[1].children[1];
     bullet01 = document.createElement('img');
     bullet01.src = 'img/bullet01.png';
     bullet01.width = 64;

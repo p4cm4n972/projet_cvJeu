@@ -4,7 +4,7 @@ var skillAnimation03 = function () {
     document.getElementById('tire').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';
     document.getElementById('tire').style.position = 'absolute';
 
-    var parent = document.body.children[1].children[0];
+    var parent = document.body.children[1].children[1];
     divPiece = document.createElement('div');
     divPiece.setAttribute('id', 'containerPiece');
     divPiece.setAttribute('class', 'masquePiece');
@@ -34,7 +34,7 @@ var skillAnimation03 = function () {
         }
         if (compteurTir >= 5) {
             clearInterval(animationPiece);
-            document.body.children[1].children[0].removeChild(divPiece);
+            document.body.children[1].children[1].removeChild(divPiece);
             document.getElementById('cvCursus').style.display = 'inline';
             document.getElementById('score').innerHTML = 'SCORE: 300';
 
@@ -50,7 +50,7 @@ var skillAnimation03 = function () {
             win = document.createElement('img');
             win.src = 'img/win.jpg';
             divWin.appendChild(win);
-            document.body.children[1].children[0].appendChild(divWin);
+            document.body.children[1].children[1].appendChild(divWin);
 
 
 

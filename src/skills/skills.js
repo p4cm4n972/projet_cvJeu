@@ -10,7 +10,7 @@ var skillAnimation = function () {
     skills01.src = 'img/sheet03.png';
     skills01.setAttribute('id', 'contenuSkills');
     skills01.setAttribute('class', 'spriteSkills');
-    document.body.children[1].children[0].appendChild(divSkills);
+    document.body.children[1].children[1].appendChild(divSkills);
     divSkills.appendChild(skills01);
     document.getElementsByClassName('masqueSkills').containerSkills.style.height = 64 + 'px';
     document.getElementsByClassName('masqueSkills').containerSkills.style.width = 64 + 'px';
@@ -39,7 +39,7 @@ var skillAnimation = function () {
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills').containerSkills.style.top)) {
             clearInterval(animationSkills);
             key = false;
-            document.body.children[1].children[0].removeChild(document.body.children[1].children[0].children[3]);
+            document.body.children[1].children[1].removeChild(divSkills);
             x = 0;
             y = -192;
             var die = setInterval(function () {
@@ -59,7 +59,7 @@ var skillAnimation = function () {
                     gameOver = document.createElement('img');
                     gameOver.src = 'img/gameOver.jpg';
                     divGameOver.appendChild(gameOver);
-                    document.body.children[1].children[0].appendChild(divGameOver);
+                    document.body.children[1].children[1].appendChild(divGameOver);
 
                     //APPARITION BOUTON REJOUER
                     document.getElementById('replay').style.display = 'inline';
@@ -70,7 +70,7 @@ var skillAnimation = function () {
 
         if (posXSkills <= 150) {
             clearInterval(animationSkills);
-            document.body.children[1].children[0].removeChild(divSkills);
+            document.body.children[1].children[1].removeChild(divSkills);
 
             //APPARITION GEM 
             divGem = document.createElement('div');
@@ -83,7 +83,7 @@ var skillAnimation = function () {
             divGem.style.left = '472px';
             gem = document.createElement('img');
             gem.src = 'img/gem01.png';
-            document.body.children[1].children[0].appendChild(divGem);
+            document.body.children[1].children[1].appendChild(divGem);
             divGem.appendChild(gem);
 
 

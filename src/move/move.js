@@ -2,6 +2,8 @@ var moveRight = function () {
     x -= 64;
     y = 0;
      document.getElementById('talk').style.display = 'none';
+    document.getElementById('instructions').style.display = 'none';
+     
     document.getElementsByClassName('sprite').contenu.style.transform = 'scaleX(1)';
 
     document.getElementsByClassName('sprite').contenu.style.left = x + 'px';
@@ -16,7 +18,7 @@ var moveRight = function () {
         x -= 64;
         u += 2;
     }
-    if (document.getElementsByClassName('masque').container.style.left == 300 + "px") {
+    if (document.getElementsByClassName('masque').container.style.left == 306 + "px") {
 
  document.getElementById('saute').style.left = parseInt(document.getElementsByClassName('masque').container.style.left) + 32 + 'px';
     document.getElementById('saute').style.top = parseInt(document.getElementsByClassName('masque').container.style.top) - 64 + 'px';

@@ -10,7 +10,7 @@ var skillAnimation02 = function () {
     divSkills02.style.left = document.getElementById('fondAnime1').clientWidth + 'px';
     skills02 = document.createElement('img');
     skills02.src = 'img/bullet02.png';
-    document.body.children[1].children[0].appendChild(divSkills02);
+    document.body.children[1].children[1].appendChild(divSkills02);
     divSkills02.appendChild(skills02);
     document.getElementsByClassName('masqueSkills02').containerSkills02.style.height = 64 + 'px';
     document.getElementsByClassName('masqueSkills02').containerSkills02.style.width = 64 + 'px';
@@ -29,7 +29,7 @@ var skillAnimation02 = function () {
         if (posXSkills02 <= parseInt(document.getElementsByClassName('masque').container.style.left) + 32 && posXSkills02 >= parseInt(document.getElementsByClassName('masque').container.style.left) &&
             parseInt(document.getElementsByClassName('masque').container.style.top) === parseInt(document.getElementsByClassName('masqueSkills02').containerSkills02.style.top)) {
             clearInterval(animationSkills02);
-            document.body.children[1].children[0].removeChild(divSkills02);
+            document.body.children[1].children[1].removeChild(divSkills02);
             x = 0;
             y = -192;
             var die02 = setInterval(function () {
@@ -49,7 +49,7 @@ var skillAnimation02 = function () {
                     gameOver = document.createElement('img');
                     gameOver.src = 'img/gameOver.jpg';
                     divGameOver.appendChild(gameOver);
-                    document.body.children[1].children[0].appendChild(divGameOver);
+                    document.body.children[1].children[1].appendChild(divGameOver);
 
                     //APPARITION BOUTON REJOUER
                     document.getElementById('replay').style.display = 'inline';
@@ -62,7 +62,7 @@ var skillAnimation02 = function () {
 
         if (posXSkills02 < 150) {
             clearInterval(animationSkills02);
-            document.body.children[1].children[0].removeChild(divSkills02);
+            document.body.children[1].children[1].removeChild(divSkills02);
 
             //APPARITION GEM 
             divGem02 = document.createElement('div');
@@ -76,7 +76,7 @@ var skillAnimation02 = function () {
             gem02 = document.createElement('img');
             gem02.src = 'img/gem02.png';
             divGem02.appendChild(gem02);
-            document.body.children[1].children[0].appendChild(divGem02);
+            document.body.children[1].children[1].appendChild(divGem02);
 
 
 
