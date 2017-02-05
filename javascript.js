@@ -89,12 +89,12 @@ window.onload = function () {
                 }
                 click = false;
         });
-
+//RECHARGEMENT DU JEU AU GAME OVER
         document.getElementById('replay').addEventListener('click', function () {
                 window.location.reload();
 
         });
-
+//NIVEAU SUIVANT
         document.getElementById('next').addEventListener('click', function () {
                 document.getElementById('cvSkills').style.display = 'none';
                 document.getElementById('next').style.display = 'none';
@@ -112,7 +112,10 @@ window.onload = function () {
 
         });
 
-
+//JOUER AU JEU
+document.getElementById('game').addEventListener('click', function () {
+        window.open('game/game.html','_blank=PERRY PC','left=120,top=120,width=950,height=350,resizable=0,toolbar=0,directories=0,dialog');
+})
 
 
 
