@@ -2,13 +2,29 @@
     width: 950px;
     height: 672px;
     border: solid black 2px;
-   /* overflow: hidden;*/
+   overflow: hidden;
     position: relative;
+    margin: auto;
 }
 .fond{
-    width: 950px;
+    width: 2850px;
     height: 672px;
     z-index: 10;
-   position: relative;
-    display: inline;
+   position: absolute;
+    display: inline-block;
 }
+.masque {
+   top: 400px;
+   left: 0px;
+    height: 64px;
+    width: 64px;
+   overflow: hidden;
+   position: absolute;
+   z-index: 15;
+}
+
+.sprite {
+    left: 0px;
+    top: 0px;
+   position: absolute;
+   z-index: 15;
