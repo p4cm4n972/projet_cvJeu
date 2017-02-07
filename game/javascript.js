@@ -12,13 +12,21 @@ $(document).ready( function deplace() {
             posSpriteX: 0,
             posSpriteY: 0,
             walk : function () {
-                this.posMasqueX = 100;
-                this.posMasqueY = 470;
-                this.posSpriteX = 0;
-                this.posSpriteY = 0;
+                this.posMasqueX = '100px';
+                this.posMasqueY = '470px';
+                this.posSpriteX = '0px';
+                this.posSpriteY = '0px';
                 action = function () {
-                    
+                    $('.sprite').css('left',this.posSpriteX);
+                    $('.sprite').css('top',this.posSpriteY);
+                    $('.sprite').animate({left:'-=64'},
+                    4000,'linear',
+                    function (){
+                        $('.sprite').css('left',-512);
+                        action();
+                    })
                 }
             }
         }
+        perryPc.walk();
 })
