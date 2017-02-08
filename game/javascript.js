@@ -1,11 +1,4 @@
-$(document).ready(function deplace() {
-    $('.fond').animate({ left: '-=1850' },
-        5000, 'linear',
-        function () {
-            $('#fondAnimate1').css('left', 0);
-            deplace();
-        });
-
+$(document).ready( function() {
      var MonPersonnage = function (x, y, u, v) {
         this.posSpriteX = x;
         this.posSpriteY = y;
@@ -17,17 +10,33 @@ $(document).ready(function deplace() {
             $('.sprite').css('left', this.posSpriteX + 'px');
             $('.sprite').css('top', this.posSpriteY + 'px');
         };
-        this.move = function moving () {
-            this.posSpriteX -= 64;
-            requestAnimationFrame(moving);
-        };
         
         };
     var walk = new MonPersonnage(0,0,100,490);
     var fly = new MonPersonnage(0,-256,100,400);
     var gun = new MonPersonnage(0,-128,100,490);
     var death = new MonPersonnage(0,-128,100,490);
+
+  
+    var f = 0;
+    var animationFond = function (){
+        $('.fond').css('left',f);
+        f -= 10;
+        if (f == -1850) {f = 0};
+        requestAnimationFrame(animationFond);
+    }
+        
     
+var i = 0;
+var animationPerso = setInterval(function () {
+            $('.sprite').css('left', i );
+        i -= 64;
+        if (i == -384) {i = 0}
+            }, 3000 / 30);
 
     fly.action();
-})
+    animationFond();
+
+    });
+    
+
