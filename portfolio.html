@@ -30,16 +30,25 @@
     border-style:groove;
     border-width: 5px;
    }
+ #myCanvas3 {
+  display: block;
+  margin: auto;
+  background-image: none;
+  background-size: cover;
+  border-color: purple;
+  border-style: solid;
+  border-radius: 5px; }  
 </style>
 </head>
 
 <body>
     <canvas id="myCanvas2" width="720px" height="360px"></canvas>
-    <canvas id="myCanvas" width="720" height="580" ;></canvas>
+    <canvas id="myCanvas" width="720" height="580"></canvas>
+    <canvas id="myCanvas3" width="564" height="620"></canvas>
+
 
 
 <script>
-
     'use strict';
     window.onload = function () {
         var canvas = document.getElementById('myCanvas2');
@@ -103,11 +112,12 @@
             };
         };
     };
-
-
 </script>
 
-    <script type="text/javascript" window.onload>'use strict';
+//********************************************************************
+
+    <script type="text/javascript" window.onload>
+    'use strict';
 
         var canvas = document.getElementById('myCanvas');
 
@@ -310,7 +320,88 @@
             poisson20.collision();
 
         };//FIN ANIMATION
+    </script>
+    //**********************************************************************************************
 
+    <script type="text/javascript" window.onload>
+
+    var context = document.getElementById('myCanvas3').getContext('2d'); //DECLARATION DU CONTEXT DU CANVAS : 2D (2 DIMENSIONS)
+    var mur = new Image('width: 600, height: 620');// CREATION DUN NOUVEL OBJET IMAGE 'MUR' QUI CONTIENDRA L'IMAGE  REPRESENTANT L'IMAGE DE FOND DU CANVAS
+    mur.src = 'img/font.jpg';//ATTRIBUTION DE LA SOURCE DE L'IMAGE 
+    
+
+//DECLARATION DE L'OBJET QUI REPRESENTERA LA BALLE
+    var ball = {
+        x: 100,
+        y: 10,
+        vx: 5,
+        vy: 2,
+        radius: 25,
+        color: 'blue',
+        draw: function () {
+            context.beginPath();
+            context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            context.closePath();
+            context.fillStyle = this.color;
+            context.fill();
+        }
+    };
+    
+//DECLARATION DE L'OBJET QUI REPRESENTERA LES OBSTACLES ROND
+    var pieces = {
+        x: 500,
+        y: 500,
+        radius: 25,
+        color: 'blue',
+        draw: function () {
+            context.beginPath();
+            context.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+            context.closePath();
+            context.fillStyle = this.color;
+            context.fill();
+        }
+    };
+   
+    
+    
+//L'ANIMATION
+    function game() {
+        context.drawImage(mur, 0, 0);//DESSIN DU FOND DU CANVAS
+        ball.draw();//DESSIN DE LA BALLE
+        pieces.draw();//DESSIN DES OBSTACLES ROND
+
+       
+        //ALGORITHME DU MOUVEMENT DE LA BALLE
+        ball.x += ball.vx;
+        ball.y += ball.vy;
+        ball.vy *= 0.99;
+        ball.vy += 0.25;
+        //
+        var dx = (ball.x ) - (pieces.x);
+        var dy = (ball.y ) - (pieces.y);
+        var distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < ball.radius + pieces.radius) {
+            ball.vy = -ball.vy;
+        }
+        //
+       
+
+        if (ball.y + ball.vy > canvas.height || ball.y + ball.vy < 0) {
+            ball.vy = -ball.vy;
+        }
+        if (ball.x + ball.vx > canvas.width || ball.x + ball.vx < 0) {
+            ball.vx = -ball.vx;
+        }
+       
+
+      
+
+
+        window.requestAnimationFrame(game);
+    };
+
+    game();
     </script>
 
 </body>
