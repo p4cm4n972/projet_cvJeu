@@ -114,7 +114,7 @@ window.onload = function () {
 
 //JOUER AU JEU
 document.getElementById('game').addEventListener('click', function () {
-        window.open('game/game.html','_blank=PERRY PC','left=120,top=120,width=950,height=550,resizable=0,toolbar=0,directories=0,dialog');
+        window.open('game/game.html','_blank=PERRY PC','left=120,top=20,width=950,height=550,resizable=0,toolbar=0,directories=0,dialog');
 })
 
 
