@@ -27,7 +27,7 @@
     <div id="jeu">
       <div><img id="fondAnimate1" class="fond" src="img/fond01.jpg"></div>
      <div id="container" class="masque">
-        <img id="contenu" class="sprite" src="img/sheet01.png">
+        <img id="contenu" class="sprite" src="../img/sheet01.png">
       </div>
     </div>
   </section>
@@ -35,7 +35,36 @@
 
   </footer>
   <script src="../jquery.js"></script>
-    <script src="javascript.js"></script>
+    <script type="text/javascript">
+    $(document).ready( function () {
+    var MonPersonnage = function (x, y, u, v) {
+        this.posSpriteX = x;
+        this.posSpriteY = y;
+        this.posMasqueX = u;
+        this.posMasqueY = v;
+        this.action = function () {
+            $('.masque').css('left', this.posMasqueX + 'px');
+            $('.masque').css('top', this.posMasqueY + 'px');
+            $('.sprite').css('left', this.posSpriteX + 'px');
+            $('.sprite').css('top', this.posSpriteY + 'px');
+        };
+        this.move = function moving () {
+            this.posSpriteX -= 64;
+            requestAnimationFrame(moving);
+        };
+        
+        };
+    var walk = new MonPersonnage(0,0,100,490);
+    var fly = new MonPersonnage(0,-256,100,400);
+    var gun = new MonPersonnage(0,-128,100,490);
+    var death = new MonPersonnage(0,-128,100,490);
+    
+
+    walk.action();
+            requestAnimationFrame(walk.move());
+    
+    });
+    </script>
 
 </body>
 
