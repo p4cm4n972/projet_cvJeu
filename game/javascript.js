@@ -48,7 +48,18 @@ $(document).ready(function () {
     var fly = new MonPersonnage(0, -256, 100, 400);
     var gun = new MonPersonnage(0, -128, 100, 490);
     var death = new MonPersonnage(0, -128, 100, 490);
-
+//constructeur pieces
+var coordsAleatoire = function (min, max) {
+    var nb = min + (max - min + 1) * Math.random();
+    return Math.floor(nb);
+};
+var Pieces = function () {
+    this.posX = 950;
+    this.posY = coordsAleatoire(64,536 );
+    this.img = function () {setInterval(function () {$('.jeu').html('<div id="img1"><img  alt="pieces" src = "img/coin.png" width = "64px" height = "64px" style="position : absolute; left: this.posX; top: this.posY"/></div>')},3000/30);
+}
+}
+var coin = new Pieces();
 
 
     //ANIMATION PERSONNAGE   
@@ -64,7 +75,7 @@ $(document).ready(function () {
 
 
 
-
+coin.img();
     fly.action();
 });
 

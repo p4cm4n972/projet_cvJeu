@@ -26,7 +26,7 @@
   <section>
     <div id="jeu">
       <div><img id="fondAnimate1" class="fond" src="img/fond01.jpg"></div>
-     <div id="container" class="masque">
+      <div id="container" class="masque">
         <img id="contenu" class="sprite" src="../img/sheet01.png">
       </div>
     </div>
@@ -35,36 +35,27 @@
 
   </footer>
   <script src="../jquery.js"></script>
-    <script type="text/javascript">
-    $(document).ready( function () {
-    var MonPersonnage = function (x, y, u, v) {
-        this.posSpriteX = x;
-        this.posSpriteY = y;
-        this.posMasqueX = u;
-        this.posMasqueY = v;
-        this.action = function () {
-            $('.masque').css('left', this.posMasqueX + 'px');
-            $('.masque').css('top', this.posMasqueY + 'px');
-            $('.sprite').css('left', this.posSpriteX + 'px');
-            $('.sprite').css('top', this.posSpriteY + 'px');
-        };
-        this.move = function moving () {
-            this.posSpriteX -= 64;
-            requestAnimationFrame(moving);
-        };
-        
-        };
-    var walk = new MonPersonnage(0,0,100,490);
-    var fly = new MonPersonnage(0,-256,100,400);
-    var gun = new MonPersonnage(0,-128,100,490);
-    var death = new MonPersonnage(0,-128,100,490);
-    
+  <script type="text/javascript">
+    $(document).ready(function () {
 
-    walk.action();
-            requestAnimationFrame(walk.move());
-    
+      var coordsAleatoire = function (min, max) {
+        var nb = min + (max - min + 1) * Math.random();
+        return Math.floor(nb);
+      };
+
+      var Pieces = function () {
+        this.posX = 950;
+        this.posY = coordsAleatoire(64, 536);
+        this.vitesse = 3;
+      }
+        Pieces.prototype.draw = function () {
+          $('.fondAnimate1').html('<img  alt="pieces" src = "img/coin.png" width="128px" height="128px" style="z-index: 22; position:"absolute"/>') };
+
+      var coin = new Pieces();
+
+      coin.draw();
     });
-    </script>
+  </script>
 
 </body>
 
