@@ -1,9 +1,8 @@
-body {
+    body {
     background-image: url('img/fond01.jpg');
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    
 }
     h1 {
     padding-left: 50px;
