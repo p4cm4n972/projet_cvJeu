@@ -1,3 +1,3 @@
-## Welcome to curriculum vitae gaming
+## Welcome to my curriculum vitae gaming
 
 
